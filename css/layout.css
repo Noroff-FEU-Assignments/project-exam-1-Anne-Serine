@@ -1,6 +1,7 @@
 .content-width {
   max-width: 1440px;
   margin: 0 4rem;
+  position: relative;
 }
 
 .big-nav-container {
@@ -13,6 +14,8 @@
 }
 
 .big-nav-container p {
+  font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
+  font-weight: 500;
   color: #171416;
   font-size: 5rem;
   gap: 1rem;
@@ -24,18 +27,25 @@
   height: 3.1rem;
 }
 
-
 .hello-container {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 60%;
-  top: 50%;
-  height: 12rem;
-  width: 31rem;
-  cursor: pointer;
+  height: 50rem;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 850px;
+  flex-direction: column;
 }
 
-.hello-container h1 {
+.hello-box {
+  height: 245px;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hello-box h1 {
   background-color: #171416;
   color: #F5F5F5;
   text-align: center;
@@ -43,27 +53,23 @@
   position: absolute;
 }
 
-.hello-container p {
+.hello-box p {
   color: #DD8A7A;
   width: 100%;
   font-size: 2.5rem;
-  position: absolute;
-  transform: translateY(-30%);
-  top: 50%;
-  text-align: end;
-  justify-content: center;
+  text-align: center;
   padding: 1rem;
 }
 
 
 
-.hello-container:hover h1:nth-child(2) {
+.hello-box:hover h1:nth-child(2) {
   clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
   transform: translateY(-50px);
   transition: 0.3s;
 }
 
-.hello-container:hover h1:nth-child(3) {
+.hello-box:hover h1:nth-child(3) {
   clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
   transform: translateY(50px);
   transition: 0.3s;
@@ -71,6 +77,6 @@
 
 .arrow {
   position: absolute;
-  transform: translateX(740%);
-  top: -21%;
+  top: 32%;
+  transform: translate(23vw);
 }
