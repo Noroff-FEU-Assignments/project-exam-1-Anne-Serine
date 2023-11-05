@@ -1,5 +1,22 @@
-.df {
+.flex {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto 60%;
+  align-items: center;
+}
+
+.db {
+  display: block ;
+}
+
+.mb {
+  margin-bottom: 5rem;
+}
+
+.ais {
+  align-items: flex-start;
 }

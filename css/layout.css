@@ -1,7 +1,12 @@
-.content-width {
+.content-container {
   max-width: 1440px;
-  margin: 0 4rem;
+  margin: auto;
   position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .big-nav-container {
@@ -11,6 +16,7 @@
   width: 37.5rem;
   height: 50rem;
   justify-content: center;
+  padding-left: 70px;
 }
 
 .big-nav-container p {
@@ -19,6 +25,7 @@
   color: #171416;
   font-size: 5rem;
   gap: 1rem;
+  max-width: 400px;
 }
 
 .break {
@@ -33,7 +40,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 850px;
+  margin: auto;
   flex-direction: column;
 }
 
@@ -53,7 +60,7 @@
   position: absolute;
 }
 
-.hello-box p {
+.hello-box a {
   color: #DD8A7A;
   width: 100%;
   font-size: 2.5rem;
@@ -61,7 +68,9 @@
   padding: 1rem;
 }
 
-
+.hello-box a:hover {
+  font-size: 2.7rem;
+}
 
 .hello-box:hover h1:nth-child(2) {
   clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
@@ -77,6 +86,6 @@
 
 .arrow {
   position: absolute;
-  top: 32%;
+  top: 52%;
   transform: translate(23vw);
 }

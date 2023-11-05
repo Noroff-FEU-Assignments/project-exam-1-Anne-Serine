@@ -27,9 +27,20 @@ h3 {
   font-size: 1.34rem;
 }
 
-p {
+p,
+a {
   font-family: "JetBrains Mono", Verdana, Geneva, Tahoma, sans-serif;
   color: #F5F5F5;
   font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #50834A;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
