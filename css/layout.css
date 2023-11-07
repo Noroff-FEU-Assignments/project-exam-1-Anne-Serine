@@ -17,6 +17,8 @@
   height: 50rem;
   justify-content: center;
   padding-left: 70px;
+  padding-right: 70px;
+  flex: 1 1 0%;
 }
 
 .big-nav-container p {
@@ -35,21 +37,23 @@
 }
 
 .hello-container {
-  height: 50rem;
+  height: 30rem;
   max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
   flex-direction: column;
+  flex: 1 1 40rem;
 }
 
 .hello-box {
   height: 245px;
-  width: 800px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .hello-box h1 {
@@ -86,7 +90,7 @@
 
 .arrow {
   position: absolute;
-  top: 39%;
+  top: -20px;
   transform: translate(23vw);
 }
 
