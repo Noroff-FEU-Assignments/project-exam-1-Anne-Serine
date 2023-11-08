@@ -7,19 +7,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200&family=Source+Code+Pro:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <title>AS coding expedition | Blog posts</title>
+<script src="https://kit.fontawesome.com/777383031e.js" crossorigin="anonymous"></script>
+  <title>AS coding expedition | Blogs</title>
 </head>
 <body>
   <header>
     <div class="header">
-      <a href="/index.html" class="header"> LOGO </a>
-      <div class="header">
-        <a href="/index.html">home</a>
-        <a href="/html/blogPostList.html">blog</a>
-        <a href="/html/playground.html">&lt;/&gt;code</a>
-        <a href="/html/contact.html">connect</a>
-        <a href="/html/about.html">profile</a>
-        <input type="search" class="search-bar">
+      <a href="/index.html"> Code ‘n Coffee </a>
+      <input type="checkbox" id="menu-checkbox">
+      <label for="menu-checkbox" class="hamburger-icon">
+      <i class="fa-solid fa-ellipsis-vertical" class="hamburger-icon" alt="hamburger-menu icon"></i>
+      </label>
+      <div class="nav-search-container">
+        <nav>
+          <ul>
+            <li><a href="/index.html" class="current">home</a></li>
+            <li><a href="/html/blogPostList.html">blog</a></li>
+            <li><a href="/html/playground.html">&lt;/&gt;code</a></li>
+            <li><a href="/html/contact.html">contact</a></li>
+            <li><a href="/html/about.html">about</a></li>
+          </ul>
+        </nav>
+        <div class="search-container">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <label for="searchBar"><input type="text" class="search-bar" id="searchBar" aria-label="search-bar"></label>
+        </div>
       </div>
     </div>
   </header>

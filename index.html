@@ -7,19 +7,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200&family=Source+Code+Pro:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/777383031e.js" crossorigin="anonymous"></script>
   <title>AS coding expedition | Home</title>
 </head>
 <body>
   <header>
     <div class="header">
-      <a href="/index.html" class="header"> Code ‘n Coffee </a>
-      <div class="header">
-        <a href="/index.html">home</a>
-        <a href="/html/blogPostList.html">blog</a>
-        <a href="/html/playground.html">&lt;/&gt;code</a>
-        <a href="/html/contact.html">connect</a>
-        <a href="/html/about.html">profile</a>
-        <input type="search" class="search-bar">
+      <a href="/index.html"> Code ‘n Coffee </a>
+      <input type="checkbox" id="menu-checkbox">
+      <label for="menu-checkbox" class="hamburger-icon">
+      <i class="fa-solid fa-ellipsis-vertical" class="hamburger-icon" alt="hamburger-menu icon"></i>
+      </label>
+      <div class="nav-search-container">
+        <nav>
+          <ul>
+            <li><a href="/index.html" class="current">home</a></li>
+            <li><a href="/html/blogPostList.html">blog</a></li>
+            <li><a href="/html/playground.html">&lt;/&gt;code</a></li>
+            <li><a href="/html/contact.html">contact</a></li>
+            <li><a href="/html/about.html">about</a></li>
+          </ul>
+        </nav>
+        <div class="search-container">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <label for="searchBar"><input type="text" class="search-bar" id="searchBar" aria-label="search-bar"></label>
+        </div>
       </div>
     </div>
   </header>
@@ -52,24 +64,45 @@
 
     <section class="content-container flex ais mb">
       <div class="db">
-        <h2>UNLOCK</h2>
-        <h2>THE WORLD</h2>
-        <h2>OF CODE</h2>
+        <h2>UNLOCK<br>THE WORLD<br>OF CODE</h2>
       </div>
       <div class="carousel-container">
         <div class="post-card"></div>
       </div>
     </section>
     <section class="background-image">
-      <div>
-        <h2>TEST</h2>
+      <div class="playground-text-box-container">
+        <div class="playground-text-box">
+          <h2>COME<br>ENTER THE<br>&lt;/&gt;PLAYGROUND</h2>
+          <button class="main-button">&lt;/&gt;</button>
+        </div>
       </div>
+      
     </section>
+
+    <div class="break mb"></div>
 
   </main>
 
-  <footer>
-
+  <footer class="footer">
+    <div class="content-container mb">
+      <div class="footer-menu">
+        <p>Anything</p>
+        <p>Anything</p>
+        <p>Anything</p>
+        <p>Anything</p>
+      </div>
+    </div>
+    <div class="footer-icon-container mb">
+      <i class="fa-brands fa-github"></i>
+      <i class="fa-brands fa-linkedin"></i>
+      <i class="fa-brands fa-square-facebook"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+    <div>
+      <p class="copyright">Copyright &copy; 2023 Code ‘n Coffee </p>
+    </div>
+    
   </footer>
   <script src="/js/script.js"></script>
   

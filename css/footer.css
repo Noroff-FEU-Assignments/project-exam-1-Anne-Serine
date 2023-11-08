@@ -1,0 +1,32 @@
+.footer {
+  background-color: #CB7177;
+  background-image: linear-gradient(#db787f, #8F5054);
+  height: 20rem;
+  width: 100%;
+}
+
+.footer p,
+.footer a {
+  color: black;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 2rem;
+}
+
+.footer-icon-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.5rem;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  font-size: 0.6rem;
+}
