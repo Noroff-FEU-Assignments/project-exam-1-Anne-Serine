@@ -46,10 +46,6 @@ nav a {
   color: #F5F5F5;
 }
 
-.current {
-  text-decoration: underline;
-}
-
 .hamburger-icon {
   display: flex;
   color: #F5F5F5;
@@ -80,9 +76,9 @@ nav a {
 
 
 @media only screen and (min-width: 1000px) {
-  
-  .search-bar {
-    display: flex;
+
+  .current {
+    text-decoration: underline;
   }
 
   .hamburger-icon {
@@ -99,6 +95,13 @@ nav a {
  
   .header-nav-container {
     margin: 0;
+  }
+
+  nav.active {
+    display: flex;
+    position: unset;
+    background-color: unset;
+    width: unset;
   }
 
 }

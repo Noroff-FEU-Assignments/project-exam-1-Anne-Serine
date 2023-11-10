@@ -14,10 +14,8 @@
   flex-direction: column;
   background-color: #F5F5F5;
   width: 37.5rem;
-  height: 50rem;
   justify-content: center;
-  padding-left: 70px;
-  padding-right: 70px;
+  padding: clamp(1rem, calc(0.8rem + 3vw), 5rem);
   flex: 1 1 0%;
 }
 
@@ -25,7 +23,7 @@
   font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
   font-weight: 500;
   color: #171416;
-  font-size: 5rem;
+  font-size: clamp(3rem, calc(2.9rem + 2vw), 5rem);
   gap: 1rem;
   max-width: 400px;
 }
@@ -53,7 +51,6 @@
 
 .hello-box {
   height: 245px;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,20 +61,21 @@
   background-color: #171416;
   color: #F5F5F5;
   text-align: center;
-  font-size: 12rem;
+  font-size: clamp(4rem, calc(3.8rem + 9vw), 12rem);
   position: absolute;
 }
 
 .hello-box a {
   color: #DD8A7A;
-  width: 100%;
-  font-size: 2.5rem;
+  font-size: clamp(1.2rem, calc(1rem + 1vw), 3rem);
   text-align: center;
   padding: 1rem;
+  max-width: 400px;
+  width: 100vw;
 }
 
 .hello-box a:hover {
-  font-size: 2.7rem;
+  font-size: clamp(1.4rem, calc(1.3rem + 1vw), 3rem);
 }
 
 .hello-box:hover h1:nth-child(2) {
@@ -94,8 +92,10 @@
 
 .arrow {
   position: absolute;
-  top: -20px;
-  transform: translate(23vw);
+  top: -8vw;
+  height: clamp(5rem, calc(4rem + 5vw), 8rem);
+  transform: rotate(-90deg);
+  left: 105px;
 }
 
 .background-image {
@@ -132,4 +132,17 @@
   position: absolute;
   right: 12%;
   top: 60%;
+}
+
+@media only screen and (min-width: 1000px) {
+
+  .arrow {
+    top: 0%;
+    left: unset;
+    right: -12vw;
+    transform: unset;
+    height: clamp(5rem, calc(5rem + 5vw), 8rem);
+    transform: unset;
+  }
+
 }
