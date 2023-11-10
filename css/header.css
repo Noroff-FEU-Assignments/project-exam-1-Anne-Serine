@@ -44,6 +44,7 @@ nav a {
   text-transform: lowercase;
   display: block;
   color: #F5F5F5;
+  position: relative;
 }
 
 .hamburger-icon {
@@ -76,10 +77,6 @@ nav a {
 
 
 @media only screen and (min-width: 1000px) {
-
-  .current {
-    text-decoration: underline;
-  }
 
   .hamburger-icon {
     display: none;

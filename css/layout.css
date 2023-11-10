@@ -25,11 +25,35 @@
   color: #171416;
   font-size: clamp(3rem, calc(2.9rem + 2vw), 5rem);
   gap: 1rem;
-  max-width: 400px;
+  max-width: max-content;
+  position: relative;
+  display: block;
 }
 
 .big-nav-container a:hover {
   transform: scale(1.05);
+}
+
+.big-nav-container a.active::before,
+nav a.active::before,
+nav a:hover::before {
+  content: "{";
+  color: #DD8A7A;
+  position: absolute;
+  left: -0.6em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.big-nav-container a.active::after,
+nav a.active::after,
+nav a:hover::after {
+  content: "}";
+  color: #DD8A7A;
+  position: absolute;
+  right: -0.6em;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .break {

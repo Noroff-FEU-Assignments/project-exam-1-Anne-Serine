@@ -1,9 +1,9 @@
 .main-button {
-  border: 1px solid #9fff94;
+  border: 1px solid #50834A;
   width: 148px;
-  height: 45px;
+  padding: 10px;
   border-radius: 30px;
-  background-color: #50834A;
+  background-color: #9fff94;
   color: black;
   font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
   font-size: 1rem;
@@ -11,11 +11,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.1s ease-in-out;
 }
 
 .main-button:hover {
   background-color: #9fff94;
   text-decoration: none;
-  transform: scale(1.02);
+  transform: scale(1.1);
   color: black;
+  font-weight: 600;
+  font-size: 1rem;
 }
