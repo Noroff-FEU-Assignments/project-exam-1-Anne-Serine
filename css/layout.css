@@ -21,13 +21,17 @@
   flex: 1 1 0%;
 }
 
-.big-nav-container p {
+.big-nav-container a {
   font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
   font-weight: 500;
   color: #171416;
   font-size: 5rem;
   gap: 1rem;
   max-width: 400px;
+}
+
+.big-nav-container a:hover {
+  transform: scale(1.05);
 }
 
 .break {

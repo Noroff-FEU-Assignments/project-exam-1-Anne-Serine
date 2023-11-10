@@ -7,10 +7,15 @@
   color: black;
   font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
   font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-button:hover {
   background-color: #9fff94;
   text-decoration: none;
   transform: scale(1.02);
+  color: black;
 }
