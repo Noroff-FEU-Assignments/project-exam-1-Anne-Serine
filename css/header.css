@@ -28,14 +28,18 @@ nav.active {
   left: 0;
   top: 100%;
   width: 100%;
+  z-index: 1;
 }
 
 nav ul {
-  padding: 0px;
   margin: 0px;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  width: 100%;
+  padding: 1rem 2rem 2rem;
+  align-items: center;
+  justify-content: center;
 }
 
 nav a {
@@ -88,6 +92,7 @@ nav a {
 
   nav ul {
     flex-direction: row;
+    padding: 0px;
   }
  
   .header-nav-container {
