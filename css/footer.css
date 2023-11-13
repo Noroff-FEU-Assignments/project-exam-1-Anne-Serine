@@ -1,13 +1,13 @@
 .footer {
-  background-color: #CB7177;
-  background-image: linear-gradient(#db787f, #8F5054);
+  background-color: var(--middle-pink);
+  background-image: linear-gradient(var(--middle-pink), var(--dark-pink));
   height: 20rem;
   width: 100%;
 }
 
 .footer p,
 .footer a {
-  color: black;
+  color: var(--black);
 }
 
 .footer-menu {

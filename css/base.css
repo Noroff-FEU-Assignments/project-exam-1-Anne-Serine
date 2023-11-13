@@ -4,15 +4,30 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background-color: #171416;
+  --black: #000000;
+  --white: #F5F5F5;
+  --pink: #DD8A7A;
+  --middle-pink: #db787f;
+  --dark-pink: #8F5054;
+  --button: #9fff94;
+  --button-border: #50834A;
+  --success: #1b841b;
+  --error: #c60707;
+
+}
+
 body {
-  background-color: #171416;
+  background-color: var(--background-color);
+  font-family: "JetBrains Mono", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1,
 h2,
 h3 {
   font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
-  color: #F5F5F5;
+  color: var(--white);
 }
 
 h1 {
@@ -29,8 +44,7 @@ h3 {
 
 p,
 a {
-  font-family: "JetBrains Mono", Verdana, Geneva, Tahoma, sans-serif;
-  color: #F5F5F5;
+  color: var(--white);
   font-size: 1rem;
 }
 
@@ -40,8 +54,10 @@ a {
 
 a:hover,
 .hamburger-icon:hover {
-  color: #db787f;
+  color: var(--pink);
   font-weight: 700;
   font-size: 1.2rem;
 }
+
+
 

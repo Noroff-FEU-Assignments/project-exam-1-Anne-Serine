@@ -3,6 +3,30 @@
   flex-wrap: wrap;
 }
 
+.flex-dir-col {
+  flex-direction: column;
+}
+
+.just-center {
+  justify-content: center;
+}
+
+.just-between {
+  justify-content: space-between;
+}
+
+.gaps {
+  gap: 1rem;
+}
+
+.gapm {
+  gap: 2rem;
+}
+
+.gapl {
+  gap: 3rem;
+}
+
 .grid {
   display: grid;
   grid-template-columns: auto 60%;
@@ -23,4 +47,8 @@
 
 .aic {
   align-items: center;
+}
+
+.max-w-32 {
+  max-width: 32rem;
 }

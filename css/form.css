@@ -1,0 +1,50 @@
+fieldset {
+  border-style: none;
+  color: var(--white);
+}
+
+label {
+  margin: 0 1rem 0.5rem;
+  display: block;
+}
+
+legend {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 1rem 1.5rem;
+  display: block;
+  width: 100%;
+  background: var(--background-color);
+  border-radius: 30px;
+  border: 1px solid var(--white);
+  resize: none;
+  color: var(--white);
+}
+
+.input-control input:focus,
+.input-control textarea:focus {
+  outline: 0;
+}
+
+.input-control.success input,
+.input-control.success textarea {
+  border-color: var(--success);
+}
+
+.input-control.error input,
+.input-control.error textarea {
+  border-color: var(--error);
+}
+
+.input-control .error-message {
+  color: var(--error);
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  padding: 0 1rem;
+}

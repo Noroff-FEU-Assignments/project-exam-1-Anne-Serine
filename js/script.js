@@ -9,7 +9,8 @@ async function getPosts() {
     let formattedDate = new Date(Date.parse(posts[i].date))
     formattedDate = formattedDate.toLocaleDateString()
 
-    postCard.innerHTML += `<img src="${posts[i].jetpack_featured_media_url}" alt="#">
+    if(postCard) {
+      postCard.innerHTML += `<img src="${posts[i].jetpack_featured_media_url}" alt="#">
                             <div>
                             <p>${formattedDate}</p>
                             <h2>${posts[i].title.rendered}</h2>
@@ -18,6 +19,8 @@ async function getPosts() {
                             
 
     console.log(posts[i])
+    }
+    
 
   }
 }
@@ -39,6 +42,74 @@ function showNavMenu() {
 
 showNavMenu();
 
+
+
+const form = document.getElementById("contactForm");
+const name = document.getElementById("name");
+const email = document.getElementById("email");
+const subject = document.getElementById("subject");
+const message = document.getElementById("message");
+
+
+
+function validateInputLength(input, minlength) {
+  if (input.length >= minlength) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+const inputs = document.querySelectorAll(".text-input")
+
+inputs.forEach((input) => {
+  input.addEventListener("keyup", (event) => {
+    const value = event.target.value;
+    const minlength = event.target.dataset.minlength;
+    const validate = validateInputLength(value, +minlength);
+    const error = input.parentElement.querySelector(".error-message");
+
+    if(!validate) {
+      input.parentElement.classList.add("error");
+      error.innerHTML = `${event.target.id} must be at least ${minlength} characters long!`;
+    } else {
+      error.innerHTML = "";
+      input.parentElement.classList.remove("error");
+      input.parentElement.classList.add("success");
+    }
+    console.log(validate)
+  })
+})
+
+
+
+function validateEmail(email) {
+  const Regex = new RegExp(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/)
+  if(Regex.test(email) && email.length > 3){
+    return true;
+  } else {
+    return false;
+  }
+  
+}
+
+const emailInput = document.querySelector("#email")
+
+  emailInput.addEventListener("keyup", (event) => {
+    const value = event.target.value;
+    const validate = validateEmail(value);
+    const error = emailInput.parentElement.querySelector(".error-message");
+
+    if(!validate) {
+      emailInput.parentElement.classList.add("error");
+      error.innerHTML = `Invalid e-mail format`;
+    } else {
+      error.innerHTML = "";
+      emailInput.parentElement.classList.remove("error");
+      emailInput.parentElement.classList.add("success");
+    }
+    console.log(validate)
+  })
 
 
 

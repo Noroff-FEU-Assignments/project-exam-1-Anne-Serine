@@ -1,10 +1,10 @@
 .main-button {
-  border: 1px solid #50834A;
+  border: 1px solid var(--button-border);
   width: 148px;
   padding: 10px;
   border-radius: 30px;
-  background-color: #9fff94;
-  color: black;
+  background-color: var(--button);
+  color: var(--black);
   font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -15,10 +15,10 @@
 }
 
 .main-button:hover {
-  background-color: #9fff94;
+  background-color: var(--button);
   text-decoration: none;
   transform: scale(1.1);
-  color: black;
+  color: var(--black);
   font-weight: 600;
   font-size: 1rem;
 }
