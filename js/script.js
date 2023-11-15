@@ -4,6 +4,7 @@ loadingIndicator();
 
 
 
+
 async function getPosts(url) {
   
   const postCardContainer = document.querySelector(".post-card-container");
@@ -17,7 +18,14 @@ async function getPosts(url) {
       loader.classList.add("dn")
     }
 
-    return posts;
+    if(response.status === 200) {
+      
+      return posts;
+
+    } else {
+
+      return null;
+    }
 
   } catch(error){
     postCardContainer.innerHTML = `<div role=alert class="error">
@@ -36,7 +44,7 @@ async function createPostCard() {
   const postCardContainer = document.querySelector(".post-card-container");
 
   if(postCardContainer) {
-    const url = "https://www.aservify.no/wp-json/wp/v2/posts?per_page=50";
+    const url = "https://www.aservify.no/wp-json/wp/v2/posts?per_page=9";
     const posts = await getPosts(url)
 
     for (let i = 0; i < posts.length; i++) {
@@ -67,12 +75,18 @@ createPostCard();
 
 let blogPostPage = 1;
 
+
 async function blogPostList(blogPostPage) {
   const blogPostContainer = document.querySelector(".blog-post-container");
 
   if(blogPostContainer) {
     const url = `https://www.aservify.no/wp-json/wp/v2/posts?page=${blogPostPage}`;
     const posts = await getPosts(url)
+
+    if(!posts) {
+      const loadMoreContainer = document.querySelector(".load-more-container");
+      loadMoreContainer.innerHTML = "<div> No more posts to load. Take a coffee break! </div>"
+    }
 
     for (let i = 0; i < posts.length; i++) {
       
@@ -82,7 +96,7 @@ async function blogPostList(blogPostPage) {
       
         blogPostContainer.innerHTML += `<div class="blog-post">
                                           <div class="blog-post-img">
-                                            <img src="${posts[i].jetpack_featured_media_url}" alt="#">
+                                            <img src="${posts[i].jetpack_featured_media_url}" alt="${posts[i].title.rendered}">
                                           </div>
                                           <div class="blog-post-text">
                                             <p>${formattedDate}</p>
@@ -91,8 +105,6 @@ async function blogPostList(blogPostPage) {
                                           </div>
                                         </div>`
                               
-
-      console.log(posts[i])
     }
   }
 }
@@ -100,7 +112,21 @@ async function blogPostList(blogPostPage) {
 blogPostList(blogPostPage);
 
 
+const loadMore = document.getElementById("loadMore");
 
+if(loadMore) {
+
+  loadMore.addEventListener("click", event => {
+
+    
+    
+    blogPostPage = blogPostPage + 1;
+    blogPostList(blogPostPage);
+
+    
+
+  })
+}
 
 
 

@@ -41,6 +41,18 @@
   margin-bottom: 5rem;
 }
 
+.mb-m {
+  margin-bottom: 3rem;
+}
+
+.mt {
+  margin-top: 5rem;
+}
+
+.mt-m {
+  margin-top: 3rem;
+}
+
 .ais {
   align-items: flex-start;
 }

@@ -10,6 +10,15 @@
   padding: 0 1rem;
 }
 
+.heading-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
 .big-nav-container {
   display: none;
 }

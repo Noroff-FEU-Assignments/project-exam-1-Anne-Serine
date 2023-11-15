@@ -9,7 +9,7 @@
 
 .loading-indicator {
   border: 1rem solid #ababab;
-  border-top: 1rem solid #18778D;
+  border-top: 1rem solid var(--dark-pink);
   border-radius: 50%;
   width: 6rem;
   height: 6rem;
@@ -79,6 +79,7 @@
   gap: 2rem;
   margin: 1rem 0;
   flex-wrap: wrap;
+  color: var(--white);
 }
 
 .blog-post-img {
@@ -88,4 +89,11 @@
 
 .blog-post-text {
   flex: 1 1 20rem;
+}
+
+.load-more-container > div {
+  border: 1px solid var(--middle-pink);
+  color: var(--middle-pink);
+  margin: 1rem;
+  padding: 1rem;
 }

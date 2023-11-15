@@ -15,7 +15,8 @@
   --button-border: #50834A;
   --success: #1b841b;
   --error: #c60707;
-
+  --hover-main-btn: #65fd54;
+  --hover-more-btn: #f5f5f5;
 }
 
 body {
