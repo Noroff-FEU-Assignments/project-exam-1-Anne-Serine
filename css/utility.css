@@ -52,3 +52,7 @@
 .max-w-32 {
   max-width: 32rem;
 }
+
+.dn {
+  display: none;
+}

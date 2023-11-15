@@ -1,31 +1,105 @@
-async function getPosts() {
-  const url = "https://www.aservify.no/wp-json/wp/v2/posts";
+import { loadingIndicator } from "./functions.js";
+
+loadingIndicator();
+
+
+
+async function getPosts(url) {
   
-  const response = await fetch(url);
-  const posts = await response.json();
+  const postCardContainer = document.querySelector(".post-card-container");
+  const loader = document.querySelector(".loading-container");
 
-  for (let i = 0; i < posts.length; i++) {
-    const postCard = document.querySelector(".post-card");
-    let formattedDate = new Date(Date.parse(posts[i].date))
-    formattedDate = formattedDate.toLocaleDateString()
+  try{
+    const response = await fetch(url);
+    const posts = await response.json();
 
-    if(postCard) {
-      postCard.innerHTML += `<img src="${posts[i].jetpack_featured_media_url}" alt="#">
-                            <div>
-                            <p>${formattedDate}</p>
-                            <h2>${posts[i].title.rendered}</h2>
-                            <p>${posts[i].excerpt.rendered}</p>
-                            </div>`
-                            
-
-    console.log(posts[i])
+    if(posts) {
+      loader.classList.add("dn")
     }
-    
 
+    return posts;
+
+  } catch(error){
+    postCardContainer.innerHTML = `<div role=alert class="error">
+                                    Sorry, failed to fetch blog posts...
+                                  </div>`
+  }
+  
+  
+}
+
+
+
+
+
+async function createPostCard() {
+  const postCardContainer = document.querySelector(".post-card-container");
+
+  if(postCardContainer) {
+    const url = "https://www.aservify.no/wp-json/wp/v2/posts?per_page=50";
+    const posts = await getPosts(url)
+
+    for (let i = 0; i < posts.length; i++) {
+      
+      let formattedDate = new Date(Date.parse(posts[i].date))
+      formattedDate = formattedDate.toLocaleDateString()
+
+      
+        postCardContainer.innerHTML += `<div class="post-card">
+                                          <img src="${posts[i].jetpack_featured_media_url}" alt="#">
+                                          <div>
+                                            <p>${formattedDate}</p>
+                                            <h2>${posts[i].title.rendered}</h2>
+                                            <p>${posts[i].excerpt.rendered}</p>
+                                          </div>
+                                        </div>`
+                              
+
+      console.log(posts[i])
+    }
   }
 }
 
-getPosts();
+createPostCard();
+
+
+
+
+let blogPostPage = 1;
+
+async function blogPostList(blogPostPage) {
+  const blogPostContainer = document.querySelector(".blog-post-container");
+
+  if(blogPostContainer) {
+    const url = `https://www.aservify.no/wp-json/wp/v2/posts?page=${blogPostPage}`;
+    const posts = await getPosts(url)
+
+    for (let i = 0; i < posts.length; i++) {
+      
+      let formattedDate = new Date(Date.parse(posts[i].date))
+      formattedDate = formattedDate.toLocaleDateString()
+
+      
+        blogPostContainer.innerHTML += `<div class="blog-post">
+                                          <div class="blog-post-img">
+                                            <img src="${posts[i].jetpack_featured_media_url}" alt="#">
+                                          </div>
+                                          <div class="blog-post-text">
+                                            <p>${formattedDate}</p>
+                                            <h2>${posts[i].title.rendered}</h2>
+                                            <p>${posts[i].excerpt.rendered}</p>
+                                          </div>
+                                        </div>`
+                              
+
+      console.log(posts[i])
+    }
+  }
+}
+
+blogPostList(blogPostPage);
+
+
 
 
 
@@ -95,21 +169,24 @@ function validateEmail(email) {
 
 const emailInput = document.querySelector("#email")
 
-  emailInput.addEventListener("keyup", (event) => {
-    const value = event.target.value;
-    const validate = validateEmail(value);
-    const error = emailInput.parentElement.querySelector(".error-message");
-
-    if(!validate) {
-      emailInput.parentElement.classList.add("error");
-      error.innerHTML = `Invalid e-mail format`;
-    } else {
-      error.innerHTML = "";
-      emailInput.parentElement.classList.remove("error");
-      emailInput.parentElement.classList.add("success");
-    }
-    console.log(validate)
-  })
+  if(emailInput) {
+    emailInput.addEventListener("keyup", (event) => {
+      const value = event.target.value;
+      const validate = validateEmail(value);
+      const error = emailInput.parentElement.querySelector(".error-message");
+  
+      if(!validate) {
+        emailInput.parentElement.classList.add("error");
+        error.innerHTML = `Invalid e-mail format`;
+      } else {
+        error.innerHTML = "";
+        emailInput.parentElement.classList.remove("error");
+        emailInput.parentElement.classList.add("success");
+      }
+      console.log(validate)
+    })
+  }
+  
 
 
 
