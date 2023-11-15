@@ -44,7 +44,7 @@ async function createPostCard() {
   const postCardContainer = document.querySelector(".post-card-container");
 
   if(postCardContainer) {
-    const url = "https://www.aservify.no/wp-json/wp/v2/posts?per_page=9";
+    const url = "https://www.aservify.no/wp-json/wp/v2/posts?per_page=9&_embed";
     const posts = await getPosts(url)
 
     for (let i = 0; i < posts.length; i++) {
@@ -52,16 +52,25 @@ async function createPostCard() {
       let formattedDate = new Date(Date.parse(posts[i].date))
       formattedDate = formattedDate.toLocaleDateString()
 
-      
-        postCardContainer.innerHTML += `<div class="post-card">
-                                          <img src="${posts[i].jetpack_featured_media_url}" alt="#">
-                                          <div>
-                                            <p>${formattedDate}</p>
-                                            <h2>${posts[i].title.rendered}</h2>
-                                            <p>${posts[i].excerpt.rendered}</p>
-                                          </div>
-                                        </div>`
-                              
+      let postImage = "";
+      let altText = "";
+      if (posts[i]._embedded["wp:featuredmedia"]) {
+
+        postImage = posts[i]._embedded["wp:featuredmedia"][0].source_url;
+        altText = posts[i]._embedded["wp:featuredmedia"][0].alt_text;
+
+      }
+
+    
+      postCardContainer.innerHTML += `<div class="post-card">
+                                        <img src="${postImage}" alt="${altText}">
+                                        <div>
+                                          <p>${formattedDate}</p>
+                                          <h2>${posts[i].title.rendered}</h2>
+                                          <p>${posts[i].excerpt.rendered}</p>
+                                        </div>
+                                      </div>`
+                            
 
       console.log(posts[i])
     }
@@ -80,32 +89,41 @@ async function blogPostList(blogPostPage) {
   const blogPostContainer = document.querySelector(".blog-post-container");
 
   if(blogPostContainer) {
-    const url = `https://www.aservify.no/wp-json/wp/v2/posts?page=${blogPostPage}`;
+    const url = `https://www.aservify.no/wp-json/wp/v2/posts?_embed&page=${blogPostPage}`;
     const posts = await getPosts(url)
 
     if(!posts) {
       const loadMoreContainer = document.querySelector(".load-more-container");
       loadMoreContainer.innerHTML = "<div> No more posts to load. Take a coffee break! </div>"
+    } else if(posts.length > 0) {
+      
+      for (let i = 0; i < posts.length; i++) {
+        
+        let formattedDate = new Date(Date.parse(posts[i].date))
+        formattedDate = formattedDate.toLocaleDateString()
+        
+        let postImage = "";
+        let altText = "";
+        if (posts[i]._embedded["wp:featuredmedia"]) {
+  
+          postImage = posts[i]._embedded["wp:featuredmedia"][0].source_url;
+          altText = posts[i]._embedded["wp:featuredmedia"][0].alt_text;
+        }
+        
+          blogPostContainer.innerHTML += `<div class="blog-post">
+                                            <div class="blog-post-img">
+                                              <img src="${postImage}" alt="${altText}">
+                                            </div>
+                                            <div class="blog-post-text">
+                                              <p>${formattedDate}</p>
+                                              <h2>${posts[i].title.rendered}</h2>
+                                              <p>${posts[i].excerpt.rendered}</p>
+                                            </div>
+                                          </div>`
+                                
+      }
     }
 
-    for (let i = 0; i < posts.length; i++) {
-      
-      let formattedDate = new Date(Date.parse(posts[i].date))
-      formattedDate = formattedDate.toLocaleDateString()
-
-      
-        blogPostContainer.innerHTML += `<div class="blog-post">
-                                          <div class="blog-post-img">
-                                            <img src="${posts[i].jetpack_featured_media_url}" alt="${posts[i].title.rendered}">
-                                          </div>
-                                          <div class="blog-post-text">
-                                            <p>${formattedDate}</p>
-                                            <h2>${posts[i].title.rendered}</h2>
-                                            <p>${posts[i].excerpt.rendered}</p>
-                                          </div>
-                                        </div>`
-                              
-    }
   }
 }
 
