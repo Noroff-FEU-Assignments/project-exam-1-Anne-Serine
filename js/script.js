@@ -5,16 +5,16 @@ loadingIndicator();
 
 
 
-async function getPosts(url) {
+async function getPosts(url, container) {
   
-  const postCardContainer = document.querySelector(".post-card-container");
+  
   const loader = document.querySelector(".loading-container");
 
   try{
     const response = await fetch(url);
     const posts = await response.json();
 
-    if(posts) {
+    if(posts && loader) {
       loader.classList.add("dn")
     }
 
@@ -28,7 +28,7 @@ async function getPosts(url) {
     }
 
   } catch(error){
-    postCardContainer.innerHTML = `<div role=alert class="error">
+    container.innerHTML = `<div role=alert class="error">
                                     Sorry, failed to fetch blog posts...
                                   </div>`
   }
@@ -45,7 +45,7 @@ async function createPostCard() {
 
   if(postCardContainer) {
     const url = "https://www.aservify.no/wp-json/wp/v2/posts?per_page=9&_embed";
-    const posts = await getPosts(url)
+    const posts = await getPosts(url, postCardContainer)
 
     for (let i = 0; i < posts.length; i++) {
       
@@ -62,14 +62,14 @@ async function createPostCard() {
       }
 
     
-      postCardContainer.innerHTML += `<div class="post-card">
+      postCardContainer.innerHTML += `<a href="/html/blogPostSpecific.html?id=${posts[i].id}" class="post-card">
                                         <img src="${postImage}" alt="${altText}">
                                         <div>
                                           <p>${formattedDate}</p>
                                           <h2>${posts[i].title.rendered}</h2>
                                           <p>${posts[i].excerpt.rendered}</p>
                                         </div>
-                                      </div>`
+                                      </a>`
                             
 
       console.log(posts[i])
@@ -90,7 +90,7 @@ async function blogPostList(blogPostPage) {
 
   if(blogPostContainer) {
     const url = `https://www.aservify.no/wp-json/wp/v2/posts?_embed&page=${blogPostPage}`;
-    const posts = await getPosts(url)
+    const posts = await getPosts(url, blogPostContainer)
 
     if(!posts) {
       const loadMoreContainer = document.querySelector(".load-more-container");
@@ -110,7 +110,7 @@ async function blogPostList(blogPostPage) {
           altText = posts[i]._embedded["wp:featuredmedia"][0].alt_text;
         }
         
-          blogPostContainer.innerHTML += `<div class="blog-post">
+          blogPostContainer.innerHTML += `<a href="/html/blogPostSpecific.html?id=${posts[i].id}" class="blog-post">
                                             <div class="blog-post-img">
                                               <img src="${postImage}" alt="${altText}">
                                             </div>
@@ -119,7 +119,7 @@ async function blogPostList(blogPostPage) {
                                               <h2>${posts[i].title.rendered}</h2>
                                               <p>${posts[i].excerpt.rendered}</p>
                                             </div>
-                                          </div>`
+                                          </a>`
                                 
       }
     }
@@ -146,6 +146,39 @@ if(loadMore) {
   })
 }
 
+
+
+async function createDetailBlogPost() {
+
+  const detailPostContainer = document.querySelector(".detail-post-container");
+
+  const params = new URLSearchParams(document.location.search);
+  const id = params.get("id");
+
+  if (id) {
+
+    const detailUrl = "https://www.aservify.no/wp-json/wp/v2/posts/" + id;
+
+    const detailBlogPost = await getPosts(detailUrl, detailPostContainer);
+
+    if(detailBlogPost) {
+
+      const blogContent = document.createElement("div");
+      blogContent.innerHTML = detailBlogPost.content.rendered;
+      detailPostContainer.appendChild(blogContent);
+
+
+     
+      document.title = detailBlogPost.title.rendered + " | Code ‘n coffee";
+
+      
+
+    }
+  }
+}
+
+
+createDetailBlogPost();
 
 
 function showNavMenu() {

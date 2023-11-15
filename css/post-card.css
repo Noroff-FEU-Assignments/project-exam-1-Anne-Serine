@@ -32,6 +32,7 @@
   align-items: center;
   padding: 2rem;
   gap: 1rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .post-card > div {
@@ -80,6 +81,12 @@
   margin: 1rem 0;
   flex-wrap: wrap;
   color: var(--white);
+  transition: all 0.2s ease-in-out;
+}
+
+.blog-post:hover,
+.post-card:hover {
+  background-color: var(--dark-grey);
 }
 
 .blog-post-img {
@@ -96,4 +103,15 @@
   color: var(--middle-pink);
   margin: 1rem;
   padding: 1rem;
+}
+
+.detail-post-container {
+  max-width: 800px;
+  color: var(--white);
+}
+
+.detail-post-container figure {
+  padding: 1rem;
+  border: 1px solid;
+  margin: 0 0 2rem;
 }
