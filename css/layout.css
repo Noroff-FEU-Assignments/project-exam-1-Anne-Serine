@@ -165,6 +165,22 @@ nav a:hover::after {
   top: 60%;
 }
 
+.about-text {
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.about-img {
+  max-width: 32rem;
+}
+
+
+
+
+
 @media only screen and (min-width: 1000px) {
 
   .arrow {
@@ -189,3 +205,4 @@ nav a:hover::after {
   }
 
 }
+

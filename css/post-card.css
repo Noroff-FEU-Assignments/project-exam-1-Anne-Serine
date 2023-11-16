@@ -110,8 +110,10 @@
   color: var(--white);
 }
 
-.detail-post-container figure {
+.detail-post-container figure,
+.about-img {
   padding: 1rem;
   border: 1px solid;
   margin: 0 0 2rem;
+  color: var(--white);
 }
