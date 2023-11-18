@@ -28,7 +28,7 @@ async function getPosts(url, container) {
     }
 
   } catch(error){
-    container.innerHTML = `<div role=alert class="error">
+    container.innerHTML = `<div role=alert class="api-error">
                                     Sorry, failed to fetch blog posts...
                                   </div>`
   }
