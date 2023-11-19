@@ -195,11 +195,7 @@ showNavMenu();
 
 
 
-const form = document.getElementById("contactForm");
-const name = document.getElementById("name");
-const email = document.getElementById("email");
-const subject = document.getElementById("subject");
-const message = document.getElementById("message");
+
 
 
 
@@ -216,13 +212,15 @@ const inputs = document.querySelectorAll(".text-input")
 inputs.forEach((input) => {
   input.addEventListener("keyup", (event) => {
     const value = event.target.value;
+    const withoutSpace = value.replace(/ /g,"")
     const minlength = event.target.dataset.minlength;
-    const validate = validateInputLength(value, +minlength);
+    const test = +minlength - withoutSpace.length
+    const validate = validateInputLength(withoutSpace, +minlength);
     const error = input.parentElement.querySelector(".error-message");
 
     if(!validate) {
       input.parentElement.classList.add("error");
-      error.innerHTML = `${event.target.id} must be at least ${minlength} characters long!`;
+      error.innerHTML = `${event.target.id} must contain ${test} more characters!`;
     } else {
       error.innerHTML = "";
       input.parentElement.classList.remove("error");
@@ -267,25 +265,3 @@ const emailInput = document.querySelector("#email")
 
 
 
-// const navMenuContainer = document.createElement("div");
-// document.body.appendChild(navMenuContainer)
-
-// const navMenu1 = document.createElement("p");
-// navMenu1.innerText = "HOME";
-// navMenuContainer.appendChild(navMenu1)
-
-// const navMenu2 = document.createElement("p");
-// navMenu2.innerText = "BLOG";
-// navMenuContainer.appendChild(navMenu2)
-
-// const navMenu3 = document.createElement("p");
-// navMenu3.innerText = "</>CODE";
-// navMenuContainer.appendChild(navMenu3)
-
-// const navMenu4 = document.createElement("p");
-// navMenu4.innerText = "CONTACT";
-// navMenuContainer.appendChild(navMenu4)
-
-// const navMenu5 = document.createElement("p");
-// navMenu5.innerText = "ABOUT";
-// navMenuContainer.appendChild(navMenu5)

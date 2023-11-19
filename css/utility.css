@@ -3,6 +3,10 @@
   flex-wrap: wrap;
 }
 
+.flex-non-wrap {
+  display: flex;
+}
+
 .flex-dir-col {
   flex-direction: column;
 }

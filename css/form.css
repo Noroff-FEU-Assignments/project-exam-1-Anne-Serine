@@ -45,6 +45,10 @@ textarea {
 .input-control .error-message {
   color: var(--error);
   font-size: 0.8rem;
-  text-transform: capitalize;
+  
   padding: 0 1rem;
+}
+
+.input-control .error-message::first-letter {
+  text-transform: capitalize;
 }

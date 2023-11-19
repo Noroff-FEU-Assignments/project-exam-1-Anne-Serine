@@ -1,5 +1,5 @@
 header {
-  height: 4rem;
+  height: 5rem;
   background-color: var(--black);
   display: flex;
   justify-content: space-between;
@@ -11,8 +11,9 @@ header {
 }
 
 .logo {
-  width: 10rem;
+  width: 8rem;
   height: auto;
+  margin-top: -7px;
 }
 
 .header-nav-container {
@@ -117,6 +118,11 @@ nav a.active {
     position: unset;
     background-color: unset;
     height: unset;
+  }
+
+  .logo {
+    width: 10rem;
+    margin-top: -5px;
   }
 
 }
