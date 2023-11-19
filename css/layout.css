@@ -27,7 +27,7 @@
   font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
   font-weight: 500;
   color: var(--background-color);
-  font-size: clamp(3rem, calc(2.9rem + 2vw), 5rem);
+  font-size: clamp(3rem, calc(2.9rem + 2vw), 3.5rem);
   gap: 1rem;
   max-width: max-content;
   position: relative;
@@ -39,6 +39,7 @@
 }
 
 .big-nav-container a.active::before,
+.big-nav-container a:hover::before,
 nav a.active::before,
 nav a:hover::before {
   content: "{";
@@ -50,6 +51,7 @@ nav a:hover::before {
 }
 
 .big-nav-container a.active::after,
+.big-nav-container a:hover::after,
 nav a.active::after,
 nav a:hover::after {
   content: "}";
