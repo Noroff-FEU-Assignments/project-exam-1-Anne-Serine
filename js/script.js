@@ -276,11 +276,22 @@ let firstCardWidth;
 
 setTimeout(() => {
   firstCardWidth = carousel.querySelector(".post-card").offsetWidth;
-}, 2000)
+}, 3000)
+
+const carouselChildren = [...carousel.children];
 
 let isDragging = false;
 let startX;
 let startScrollLeft;
+let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+
+carouselChildren.slice(-cardPerView).reverse().forEach(postCard => {
+  carousel.insertAdjacentHTML("afterbegin", postCard.outerHTML);
+})
+
+carouselChildren.slice(0, cardPerView).forEach(postCard => {
+  carousel.insertAdjacentHTML("beforeend", postCard.outerHTML);
+})
 
 arrowBtns.forEach(btn => {
   btn.addEventListener("click", () => {
@@ -310,8 +321,23 @@ const dragStop = () => {
   carousel.classList.remove("no-event");
 }
 
+const infinitScroll = () => {
+
+  if(carousel.scrollLeft === 0) {
+    carousel.classList.add("no-transition");
+    carousel.scrollLeft = carousel.scrollWidth - ( 2 * carousel.offsetWidth);
+    carousel.classList.remove("no-transition");
+
+  } else if(carousel.scrollLeft === carousel.scrollWidth - carousel.offsetWidth) {
+    carousel.classList.add("no-transition");
+    carousel.scrollLeft = carousel.offsetWidth;
+    carousel.classList.remove("no-transition");
+  }
+}
+
 carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("scroll", infinitScroll);
 
 }
