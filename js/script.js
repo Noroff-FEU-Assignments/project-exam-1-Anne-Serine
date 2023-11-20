@@ -62,8 +62,8 @@ async function createPostCard() {
       }
 
     
-      postCardContainer.innerHTML += `<a href="/html/blogPostSpecific.html?id=${posts[i].id}" class="post-card">
-                                        <img src="${postImage}" alt="${altText}">
+      postCardContainer.innerHTML += `<a href="/html/blogPostSpecific.html?id=${posts[i].id}" class="post-card" draggable="false">
+                                        <img src="${postImage}" alt="${altText}" draggable="false">
                                         <div>
                                           <p>${formattedDate}</p>
                                           <h2>${posts[i].title.rendered}</h2>
@@ -263,5 +263,53 @@ const emailInput = document.querySelector("#email")
   }
   
 
+
+
+// CAROUSEL
+
+const carousel = document.querySelector(".carousel");
+const arrowBtns = document.querySelectorAll(".carousel-wrapper i");
+
+let firstCardWidth;
+
+setTimeout(() => {
+  firstCardWidth = carousel.querySelector(".post-card").offsetWidth;
+}, 2000)
+
+let isDragging = false;
+let startX;
+let startScrollLeft;
+
+arrowBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    console.log(btn.id)
+    carousel.scrollLeft += btn.id === "left-arrow-carousel" ? -firstCardWidth : firstCardWidth;
+  })
+})
+
+const dragStart = (e) => {
+  isDragging = true;
+  carousel.classList.add("dragging");
+
+  startX = e.pageX;
+  startScrollLeft = carousel.scrollLeft;
+}
+
+const dragging = (e) => {
+  if(!isDragging) return;
+  carousel.classList.add("no-event");
+  carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+}
+
+const dragStop = () => {
+
+  isDragging = false;
+  carousel.classList.remove("dragging");
+  carousel.classList.remove("no-event");
+}
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
 
 

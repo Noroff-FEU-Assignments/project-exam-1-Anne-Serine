@@ -1,14 +1,31 @@
 .carousel-wrapper {
-  max-width: 1025px;
+  max-width: 1017px;
   width: 100%;
   overflow: hidden;
   margin: auto;
+  position: relative;
 }
 
 .carousel {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: max-content;
+  grid-auto-columns: calc((100% / 3) - 0.5rem);
+  gap: 1rem;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.carousel-dragging {
+  scroll-behavior: smooth;
+}
+
+.carousel.dragging .post-card {
+  user-select: none;
+  cursor: grab;
+}
+
+.carousel.no-event .post-card {
+  pointer-events: none;
 }
 
 .carousel-arrow-left,
@@ -17,6 +34,8 @@
   color: var(--white);
   padding: 1rem;
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .carousel-arrow-left {
@@ -54,10 +73,6 @@
   padding: 1rem;
   gap: 1rem;
   transition: all 0.2s ease-in-out;
-}
-
-.post-card-container-carousel {
-  gap: 2rem;
 }
 
 .post-card > div {
