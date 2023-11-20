@@ -34,14 +34,17 @@ h3 {
 
 h1 {
   font-size: 2.375rem;
+  margin-bottom: 2rem;
 }
 
 h2 {
   font-size: 1.78rem;
+  margin: 2rem 0 1rem;
 }
 
 h3 {
   font-size: 1.34rem;
+  margin: 1rem 0 0.5rem;;
 }
 
 p,
@@ -52,6 +55,12 @@ a {
 
 a {
   text-decoration: none;
+}
+
+pre {
+  background-color: #222;
+  padding: 1rem;
+  margin: 2rem 0;
 }
 
 nav a:hover,

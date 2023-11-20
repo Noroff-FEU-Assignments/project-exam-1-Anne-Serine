@@ -268,6 +268,8 @@ const emailInput = document.querySelector("#email")
 // CAROUSEL
 
 const carousel = document.querySelector(".carousel");
+if(carousel) {
+
 const arrowBtns = document.querySelectorAll(".carousel-wrapper i");
 
 let firstCardWidth;
@@ -312,4 +314,4 @@ carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragStop);
 
-
+}
