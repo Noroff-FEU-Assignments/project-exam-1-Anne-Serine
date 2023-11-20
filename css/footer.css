@@ -1,8 +1,17 @@
 .footer {
   background-color: var(--middle-pink);
   background-image: linear-gradient(var(--middle-pink), var(--dark-pink));
-  height: 20rem;
+  min-height: 15rem;
+  height: auto;
   width: 100%;
+}
+
+footer .content-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 2rem;
+  margin: auto
 }
 
 .footer p,
@@ -10,11 +19,8 @@
   color: var(--black);
 }
 
-.footer-menu {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  padding: 2rem;
+.footer img {
+  margin-top: 2rem;
 }
 
 .footer-icon-container {
