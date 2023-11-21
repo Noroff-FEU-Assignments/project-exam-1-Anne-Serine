@@ -179,6 +179,9 @@ nav a:hover::after {
   max-width: 32rem;
 }
 
+.sub-header-container {
+  max-width: 600px;
+}
 
 
 

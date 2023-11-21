@@ -32,8 +32,28 @@
   </header>
 
   <main>
+    <section class="flex">
+      <div class="big-nav-container">
+        <a href="/index.html">home</a>
+        <a href="/html/blogPostList.html">blog</a>
+        <a href="/html/code.html">&lt;/&gt;code</a>
+        <a href="/html/contact.html" class="active">contact</a>
+        <a href="/html/about.html">about</a>
+      </div>
+      <div class="hello-container">
+        <div class="sub-header-container">
+          <h1>What's the message you're itching to drop into the digital mailbox of mine?</h1>
+        </div>
+      </div>
+    </section>
+    <div class="break mb"></div>
+
     <div class="content-container flex flex-dir-col just-center mb mt">
-      <h1>Contact me</h1>
+      <div class="flex aic">
+        <i class="fa-solid fa-envelope contact-icon">
+        </i><h1>Contact me</h1>
+      </div>
+      
       <form method="post" class="max-w-32" id="contactForm">
         <fieldset>
           <legend>What's the message you're itching to drop into the digital mailbox of mine?</legend>
@@ -59,11 +79,9 @@
               <div class="error-message"></div>
             </div>
             <input type="button" value="send" class="main-button">
-            
           </div>
         </fieldset>
       </form>
-
     </div>
   </main>
 

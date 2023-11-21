@@ -172,13 +172,19 @@ async function createDetailBlogPost() {
       document.title = detailBlogPost.title.rendered + " | Code ‘n coffee";
 
       
+      
+      
 
     }
+
+    
   }
 }
 
 
 createDetailBlogPost();
+
+
 
 
 function showNavMenu() {
@@ -341,3 +347,48 @@ document.addEventListener("mouseup", dragStop);
 carousel.addEventListener("scroll", infinitScroll);
 
 }
+
+
+// MODAL, make the picture bigger by clicking on it
+
+// const imageModal = document.querySelector("#imageModal");
+// const closeModal = document.querySelector(".close-modal");
+// const images = document.querySelectorAll(".wp-block-image img");
+// const description = document.querySelector("#description")
+
+// let imgSrc;
+
+// images.forEach((img) => {
+//   img.addEventListener("click", (e) => {
+//     imgSrc = e.target.src;
+
+//     console.log()
+//   })
+// })
+
+
+  
+// const images = document.querySelectorAll(".wp-block-image img");
+
+//     let imgSrc;
+
+//       images.forEach((img) => {
+//         img.addEventListener("click", (e) => {
+//           imgSrc = e.target.src;
+
+//           console.log(imgSrc)
+//         })
+//       })
+
+//       // CREATE MODAL
+
+//       let imgModal = (src) => {
+//         const imageModal = document.createElement("dialog");
+//         imageModal.setAttribute("class", "modal");
+//         document.querySelector(".detail-page").appendChild(imageModal);
+
+//         const modalImage = document.createElement("img");
+//         modalImage.setAttribute("src", src);
+//         modalImage.append(newImage);
+//       }
+
