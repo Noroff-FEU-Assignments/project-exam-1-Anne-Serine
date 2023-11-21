@@ -1,4 +1,5 @@
-.main-button {
+.main-button,
+.more-button {
   border: 1px solid var(--button-border);
   width: 148px;
   padding: 10px;
@@ -25,19 +26,8 @@
 
 .more-button {
   border: 1px solid var(--dark-pink);
-  width: 148px;
-  padding: 10px;
-  border-radius: 30px;
   background-color: var(--pink);
-  color: var(--black);
-  font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.1s ease-in-out;
-}
+}  
 
 .more-button:hover {
   background-color: var(--hover-more-btn);
