@@ -302,7 +302,7 @@ carouselChildren.slice(0, cardPerView).forEach(postCard => {
 arrowBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     console.log(btn.id)
-    carousel.scrollLeft += btn.id === "left-arrow-carousel" ? -firstCardWidth : firstCardWidth;
+    carousel.scrollLeft += btn.id === "leftArrowCarousel" ? -firstCardWidth : firstCardWidth;
   })
 })
 
@@ -376,6 +376,15 @@ function makeImageModal() {
     closeModal.addEventListener("click", () => {
       imageModal.close();
     })
+
+    imageModal.addEventListener("click", (event) => {
+      const rect = imageModal.getBoundingClientRect();
+
+      if (event.clientY < rect.top || event.clientY > rect.bottom || event.clientX <  rect.left || event.clientX > rect.right) {
+        imageModal.close();
+      }
+
+    });
 
 
   }

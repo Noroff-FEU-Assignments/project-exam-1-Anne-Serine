@@ -1,9 +1,10 @@
 .carousel-wrapper {
-  max-width: 1017px;
+  max-width: 1055px;
   width: 100%;
   overflow: hidden;
   margin: auto;
   position: relative;
+  padding: 1.5rem;
 }
 
 .carousel {
@@ -24,7 +25,6 @@
 .carousel :where(.post-card) {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .carousel-dragging {
@@ -47,12 +47,20 @@
 
 .carousel-arrow-left,
 .carousel-arrow-right {
+  border: none;
+  border-radius: 50%;
+  max-height: unset;
+  align-items: center;
   font-size: 1.5rem;
   color: var(--white);
-  padding: 1rem;
+  padding: 0;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  height: 3rem;
+  width: 3rem;
+  margin: 0;
+  color: var(--black);
 }
 
 .carousel-arrow-left {
