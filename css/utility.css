@@ -41,6 +41,10 @@
   display: block ;
 }
 
+.ma {
+  margin: auto;
+}
+
 .mb {
   margin-bottom: 5rem;
 }

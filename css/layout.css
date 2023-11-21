@@ -177,6 +177,7 @@ nav a:hover::after {
 
 .about-img {
   max-width: 32rem;
+  width: 100%;
 }
 
 .sub-header-container {
