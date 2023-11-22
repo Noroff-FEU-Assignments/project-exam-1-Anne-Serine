@@ -157,7 +157,7 @@ async function createDetailBlogPost() {
 
   if (id) {
 
-    const detailUrl = "https://www.aservify.no/wp-json/wp/v2/posts/" + id;
+    const detailUrl = "https://www.aservify.no/wp-json/wp/v2/posts/" + id + "?_embed";
 
     const detailBlogPost = await getPosts(detailUrl, detailPostContainer);
 
@@ -167,12 +167,12 @@ async function createDetailBlogPost() {
       blogContent.innerHTML = detailBlogPost.content.rendered;
       detailPostContainer.appendChild(blogContent);
 
-
+      const altText = detailBlogPost._embedded["wp:featuredmedia"][0].alt_text;
      
       document.title = detailBlogPost.title.rendered + " | Code ‘n coffee";
 
       
-      makeImageModal();
+      makeImageModal(altText);
       
 
     }
@@ -352,7 +352,7 @@ carousel.addEventListener("scroll", infinitScroll);
 // MODAL, make the picture bigger by clicking on it
 
 
-function makeImageModal() {
+function makeImageModal(altText) {
 
   const imageModal = document.getElementById("imageModal");
 
@@ -363,11 +363,15 @@ function makeImageModal() {
     imageModal.prepend(imageElement)
 
     
+
     const images = document.querySelectorAll(".wp-block-image img");
     images.forEach((img) => {
       img.addEventListener("click", (e) => {
         imageElement.setAttribute("src", e.target.src);
-        imageElement.setAttribute("alt", e.target.alt);
+        imageElement.setAttribute("alt", altText);
+
+        const description = document.getElementById("description");
+        description.innerHTML = `<p>${altText}</p>`;
   
         imageModal.showModal();
       })

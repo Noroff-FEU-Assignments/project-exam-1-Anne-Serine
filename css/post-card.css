@@ -164,6 +164,12 @@
   font-size: 2rem;
 }
 
+.modal-image-description {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
 
 /* BLOG POST LIST */
 
