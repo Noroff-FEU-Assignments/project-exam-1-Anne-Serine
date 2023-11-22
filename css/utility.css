@@ -45,6 +45,10 @@
   margin: auto;
 }
 
+.mn {
+  margin: 0;
+}
+
 .mb {
   margin-bottom: 5rem;
 }
