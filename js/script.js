@@ -74,6 +74,9 @@ async function createPostCard() {
 
       console.log(posts[i])
     }
+
+    makeCarousel()
+
   }
 }
 
@@ -273,22 +276,24 @@ const emailInput = document.querySelector("#email")
 
 // CAROUSEL
 
-const carousel = document.querySelector(".carousel");
+function makeCarousel() {
+
+  const carousel = document.querySelector(".carousel");
 if(carousel) {
 
 const arrowBtns = document.querySelectorAll(".carousel-wrapper i");
 
-let firstCardWidth;
 
-setTimeout(() => {
-  firstCardWidth = carousel.querySelector(".post-card").offsetWidth;
-}, 3000)
+const firstCardWidth = carousel.querySelector(".post-card").offsetWidth;
+
 
 const carouselChildren = [...carousel.children];
 
 let isDragging = false;
 let startX;
 let startScrollLeft;
+carousel.scrollLeft = carousel.offsetWidth;
+
 let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
 
 carouselChildren.slice(-cardPerView).reverse().forEach(postCard => {
@@ -347,6 +352,10 @@ document.addEventListener("mouseup", dragStop);
 carousel.addEventListener("scroll", infinitScroll);
 
 }
+
+}
+
+
 
 
 // MODAL, make the picture bigger by clicking on it
