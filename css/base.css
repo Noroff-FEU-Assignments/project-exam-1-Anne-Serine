@@ -61,6 +61,8 @@ pre {
   background-color: #222;
   padding: 1rem;
   margin: 2rem 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 nav a:hover,
