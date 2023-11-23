@@ -96,7 +96,7 @@ nav a:hover::after {
 }
 
 .hello-box a {
-  color: var(--pink);
+  color: var(--middle-pink);
   font-size: clamp(1.2rem, calc(1rem + 1vw), 3rem);
   text-align: center;
   padding: 1rem;
@@ -126,6 +126,7 @@ nav a:hover::after {
   height: clamp(5rem, calc(4rem + 5vw), 8rem);
   transform: rotate(-90deg);
   left: 105px;
+  color: var(--middle-pink);
 }
 
 .welcome-text {
@@ -137,6 +138,14 @@ nav a:hover::after {
   max-width: 1035px;
   flex-direction: column;
   align-items: start;
+}
+
+.contact-heading-container {
+  max-width: 32rem;
+  padding: 1rem;
+  display: flex;
+  width: 100%;
+  text-align: start;
 }
 
 .background-image {
@@ -188,6 +197,13 @@ nav a:hover::after {
 
 .sub-header-container {
   max-width: 600px;
+  padding: 1rem;
+}
+
+.sub-header-container i {
+  color: var(--middle-pink);
+  font-size: 3rem;
+  margin: 0 1rem 2rem 0;
 }
 
 
