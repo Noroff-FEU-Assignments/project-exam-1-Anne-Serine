@@ -219,7 +219,7 @@ function validateInputLength(input, minlength) {
 const inputs = document.querySelectorAll(".text-input")
 
 inputs.forEach((input) => {
-  input.addEventListener("keyup", (event) => {
+  input.addEventListener("input", (event) => {
     const value = event.target.value;
     const withoutSpace = value.replace(/ /g,"")
     const minlength = event.target.dataset.minlength;
@@ -254,7 +254,7 @@ function validateEmail(email) {
 const emailInput = document.querySelector("#email")
 
   if(emailInput) {
-    emailInput.addEventListener("keyup", (event) => {
+    emailInput.addEventListener("input", (event) => {
       const value = event.target.value;
       const validate = validateEmail(value);
       const error = emailInput.parentElement.querySelector(".error-message");
