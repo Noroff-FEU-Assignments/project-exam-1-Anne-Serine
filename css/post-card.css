@@ -57,10 +57,11 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  height: 3rem;
-  width: 3rem;
-  margin: 0;
+  height: 2rem;
+  width: 2rem;
+  margin: 5px;
   color: var(--black);
+  cursor: pointer;
 }
 
 .carousel-arrow-left {
@@ -232,6 +233,13 @@
     grid-auto-columns: calc((100% / 2) - 0.7rem);
   }
 
+  .carousel-arrow-left,
+  .carousel-arrow-right {
+    height: 3rem;
+    width: 3rem;
+    margin: 0;
+  }
+
 }
 
 
@@ -254,7 +262,7 @@
   }
 
   .carousel {
-    grid-auto-columns: calc((100% / 3) - 0.5rem);
+    grid-auto-columns: calc((100% / 3) - 0.7rem);
   }
 
 }
