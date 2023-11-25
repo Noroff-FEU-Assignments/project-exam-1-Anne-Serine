@@ -281,7 +281,7 @@ function makeCarousel() {
   const carousel = document.querySelector(".carousel");
 if(carousel) {
 
-const arrowBtns = document.querySelectorAll(".carousel-wrapper i");
+const arrowBtns = document.querySelectorAll(".carousel-wrapper button");
 
 
 const firstCardWidth = carousel.querySelector(".post-card").offsetWidth;
@@ -439,21 +439,32 @@ function makeImageModal(altText) {
 
 const aboutMeContainer = document.querySelector(".about-text");
 
-aboutMeContainer.innerHTML = `<div> const aboutMe = {
+
+aboutMeContainer.innerHTML = `<div> const <span class="about-obj">aboutMe</span> = {
   
-  <p class="about-attr"> name </p>: "Anne-Serine",
-  gender: "female",
-  age: 37,
-  location: "Haugesund, Norway",
-  hobbies: [
+  <span class="about-attr">name</span>: "Anne-Serine",
+  <span class="about-attr">gender</span>: "female",
+  <span class="about-attr">age</span>: 37,
+  <span class="about-attr">location</span>: "Haugesund, Norway",
+  <span class="about-attr">hobbies</span>: [
     "photography",
     "drawing"
   ],
-  favoriteFood: [
+  <span class="about-attr">favoriteFood</span>: [
     "Norwegian Lamb Fricassee",
     "Komle"
   ],
-  favoriteCoffee: "Sweet Chili Mocha",
-  dailyGoal: "Master the art of not hitting snooze more than three times",
+  <span class="about-attr">favoriteCoffee</span>: "Sweet Chili Mocha",
+  <span class="about-attr">dailyGoal</span>: "Master the art of not hitting snooze more than three times",
 
 } </div>`;
+
+
+
+
+
+
+// MOST POPULAR READING
+
+
+

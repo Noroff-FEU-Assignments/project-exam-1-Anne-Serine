@@ -18,6 +18,12 @@
   --error: #f54854;
   --hover-main-btn: #19fe00;
   --hover-more-btn: #f5f5f5;
+
+  --aboutWhite: #F5F2F0;
+  --aboutorange: #F0BBA6;
+  --abooutMoreOrange: #F19275;
+  --abooutDarkOrange: #BE6045;
+  --aboutGrey: #D8D5D4; 
 }
 
 body {
