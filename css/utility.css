@@ -3,6 +3,10 @@
   flex-wrap: wrap;
 }
 
+.flex-wrap-revers {
+  flex-wrap: wrap-reverse;
+}
+
 .flex-non-wrap {
   display: flex;
 }
@@ -83,6 +87,10 @@
 
 .aic {
   align-items: center;
+}
+
+.aie {
+  align-items: end;
 }
 
 .max-w-32 {

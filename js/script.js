@@ -406,6 +406,10 @@ function makeImageModal(altText) {
 
 
 
+
+
+
+
 // ABOUT ME object
 
 // const aboutMe = {
@@ -440,7 +444,7 @@ function makeImageModal(altText) {
 const aboutMeContainer = document.querySelector(".about-text");
 
 
-aboutMeContainer.innerHTML = `<div> const <span class="about-obj">aboutMe</span> = {
+aboutMeContainer.innerHTML = `<div> <span class="about-const">const</span> <span class="about-obj">aboutMe</span> = {
   
   <span class="about-attr">name</span>: "Anne-Serine",
   <span class="about-attr">gender</span>: "female",
@@ -464,7 +468,7 @@ aboutMeContainer.innerHTML = `<div> const <span class="about-obj">aboutMe</span>
 
 
 
-// MOST POPULAR READING
+// MOST POPULAR BLOG POST
 
 
 
