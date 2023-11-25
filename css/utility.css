@@ -15,6 +15,10 @@
   justify-content: center;
 }
 
+.just-end {
+  justify-content: end;
+}
+
 .just-between {
   justify-content: space-between;
 }
@@ -49,6 +53,14 @@
   margin: 0;
 }
 
+.marg-s {
+  margin: 1rem;
+}
+
+.marg-m {
+  margin: 2rem;
+}
+
 .mb {
   margin-bottom: 5rem;
 }
@@ -80,3 +92,13 @@
 .dn {
   display: none;
 }
+
+.background-white {
+  background-color: var(--white);
+}
+
+.border-white {
+  border: 1px solid var(--white);
+  padding: 0 2rem 2rem;
+}
+

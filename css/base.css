@@ -63,6 +63,7 @@ pre {
   margin: 2rem 0;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+  color: var(--white);
 }
 
 nav a:hover,

@@ -406,3 +406,54 @@ function makeImageModal(altText) {
 
 
 
+// ABOUT ME object
+
+// const aboutMe = {
+  
+//   name: "Anne-Serine",
+//   gender: "female",
+//   age: 37,
+//   location: "Haugesund, Norway",
+//   hobbies: [
+//     "photography",
+//     "drawing"
+//   ],
+//   favoriteFood: [
+//     "Norwegian Lamb Fricassee",
+//     "Komle"
+//   ],
+//   favoriteCoffee: "Sweet Chili Mocha",
+//   dailyGoal: "Master the art of not hitting snooze more than three times",
+
+// }
+
+// const aboutMeContainer = document.querySelector(".about-text");
+
+// aboutMeContainer.innerHTML = `<div> const aboutMe = ${JSON.stringify(aboutMe, null, 2)} </div>`;
+
+
+// console.log(aboutMe)
+
+
+
+
+const aboutMeContainer = document.querySelector(".about-text");
+
+aboutMeContainer.innerHTML = `<div> const aboutMe = {
+  
+  <p class="about-attr"> name </p>: "Anne-Serine",
+  gender: "female",
+  age: 37,
+  location: "Haugesund, Norway",
+  hobbies: [
+    "photography",
+    "drawing"
+  ],
+  favoriteFood: [
+    "Norwegian Lamb Fricassee",
+    "Komle"
+  ],
+  favoriteCoffee: "Sweet Chili Mocha",
+  dailyGoal: "Master the art of not hitting snooze more than three times",
+
+} </div>`;
