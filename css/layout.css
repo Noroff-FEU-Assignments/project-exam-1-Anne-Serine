@@ -100,7 +100,7 @@ nav a:hover::after {
   font-size: clamp(1.2rem, calc(1rem + 1vw), 3rem);
   text-align: center;
   padding: 1rem;
-  max-width: 400px;
+  max-width: 500px;
   width: 100vw;
 }
 
@@ -173,12 +173,14 @@ nav a:hover::after {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  z-index: 10;
 }
 
 .playground-text-box-container {
-  position: absolute;
-  right: 10%;
-  top: 38%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 8rem;
 }
 
 .comment-container {
@@ -245,8 +247,14 @@ nav a:hover::after {
 
 
 
+@media only screen and (min-width: 600px) {
 
-
+  .playground-text-box {
+    position: absolute;
+    right: 10%;
+    top: 38%;
+  }
+}
 
 
 @media only screen and (min-width: 800px) {
@@ -273,7 +281,7 @@ nav a:hover::after {
   .arrow {
     top: 0%;
     left: unset;
-    right: -12vw;
+    right: -9vw;
     transform: unset;
     height: clamp(5rem, calc(5rem + 5vw), 8rem);
     transform: unset;
