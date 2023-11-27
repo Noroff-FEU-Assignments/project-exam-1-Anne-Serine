@@ -261,7 +261,7 @@ const emailInput = document.querySelector("#email")
   
       if(!validate) {
         emailInput.parentElement.classList.add("error");
-        error.innerHTML = `Invalid e-mail format`;
+        error.innerHTML = `* example@email.com`;
       } else {
         error.innerHTML = "";
         emailInput.parentElement.classList.remove("error");
@@ -271,6 +271,22 @@ const emailInput = document.querySelector("#email")
     })
   }
   
+
+
+const contactFormButton = document.querySelector("#contactFormButton");
+
+  if(contactFormButton) {
+    contactFormButton.addEventListener("click", () => {
+
+      const success = contactFormButton.parentElement.querySelector(".success-message");
+
+      contactFormButton.parentElement.classList.add("success");
+      success.innerHTML = `Wohoo! Message has been sent. Now take a sip of coffee, and you will hear from me!`
+      
+    })
+  }
+
+
 
 
 
