@@ -486,7 +486,37 @@ if(aboutMeContainer) {
 
 
 
-// MOST POPULAR BLOG POST
+// COFFEE FACTS - make a function generate random facts about coffee
 
-const mostReadBlogPost = "https://www.aservify.no/wp-json/wp/v2/posts/121?_embed"
 
+let coffeeFacts = [
+  "Approximately 400 billion cups of coffee are consumed every year",
+  "It takes 100 beans to make 1 cup of coffee",
+  "It takes 5 years for a coffee tree to mature enough to produce its first crop",
+  "Once roasted a coffee bean increases in volume but decreases in weight (Like popcorn!)",
+  "Coffee consists of 98.5% water",
+  "Light-roasted coffee contains more caffeine than dark-roasted coffee",
+  "Coffee is a fruit. ",
+]
+
+const coffeeFactContainer = document.querySelector(".coffee-fact-container");
+
+function outputRandomCoffeeFact() {
+  const coffeeFactButton = document.getElementById("coffeeFactButton");
+
+  coffeeFactContainer.innerHTML = `<img src="/icons/code-n-coffee-logo.svg" class="logo ma">`;
+
+  coffeeFactButton.addEventListener("click", (fact) => {
+
+    coffeeFactContainer.innerHTML = ""
+
+    for(let i = 0; i < coffeeFacts.length; i++) {
+      coffeeFactContainer.innerHTML = `<p>${coffeeFacts[(Math.floor(Math.random() * coffeeFacts.length))]}</p>`;
+    }
+    
+
+    console.log(coffeeFacts[(Math.floor(Math.random() * coffeeFacts.length))])
+  })
+}
+
+outputRandomCoffeeFact();
