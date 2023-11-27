@@ -443,25 +443,27 @@ function makeImageModal(altText) {
 
 const aboutMeContainer = document.querySelector(".about-text");
 
-
-aboutMeContainer.innerHTML = `<div> <span class="about-const">const</span> <span class="about-obj">aboutMe</span> = {
+if(aboutMeContainer) {
+  aboutMeContainer.innerHTML = `<div> <span class="about-const">const</span> <span class="about-obj">aboutMe</span> = {
   
-  <span class="about-attr">name</span>: "Anne-Serine",
-  <span class="about-attr">gender</span>: "female",
-  <span class="about-attr">age</span>: 37,
-  <span class="about-attr">location</span>: "Haugesund, Norway",
-  <span class="about-attr">hobbies</span>: [
-    "photography",
-    "drawing"
-  ],
-  <span class="about-attr">favoriteFood</span>: [
-    "Norwegian Lamb Fricassee",
-    "Komle"
-  ],
-  <span class="about-attr">favoriteCoffee</span>: "Sweet Chili Mocha",
-  <span class="about-attr">dailyGoal</span>: "Master the art of not hitting snooze more than three times",
+    <span class="about-attr">name</span>: "Anne-Serine",
+    <span class="about-attr">gender</span>: "female",
+    <span class="about-attr">age</span>: 37,
+    <span class="about-attr">location</span>: "Haugesund, Norway",
+    <span class="about-attr">hobbies</span>: [
+      "photography",
+      "drawing"
+    ],
+    <span class="about-attr">favoriteFood</span>: [
+      "Norwegian Lamb Fricassee",
+      "Komle"
+    ],
+    <span class="about-attr">favoriteCoffee</span>: "Sweet Chili Mocha",
+    <span class="about-attr">dailyGoal</span>: "Master the art of not hitting snooze more than three times",
+  
+  } </div>`;
+}
 
-} </div>`;
 
 
 
@@ -470,5 +472,5 @@ aboutMeContainer.innerHTML = `<div> <span class="about-const">const</span> <span
 
 // MOST POPULAR BLOG POST
 
-
+const mostReadBlogPost = "https://www.aservify.no/wp-json/wp/v2/posts/121?_embed"
 

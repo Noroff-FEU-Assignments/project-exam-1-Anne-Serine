@@ -84,3 +84,6 @@ img {
   display: block;
 }
 
+section {
+  position: relative;
+}
