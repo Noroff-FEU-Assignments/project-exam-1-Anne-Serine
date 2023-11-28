@@ -71,26 +71,26 @@
           <div class="flex flex-dir-col gapm">
             <div class="input-control">
               <label for="name">Your full name</label>
-              <input type="text" class="text-input" name="name" id="name" data-minlength="5">
+              <input type="text" class="text-input validate-input" name="name" id="name" data-minlength="5">
               <div class="error-message"></div>
             </div>
             <div class="input-control">
               <label for="email">Your e-mail address</label>
-              <input type="email" name="email" id="email">
+              <input type="email" class="validate-input" name="email" id="email">
               <div class="error-message"></div>
             </div>
             <div class="input-control">
               <label for="subject">Subject</label>
-              <input type="text" class="text-input" name="subject" id="subject" data-minlength="15">
+              <input type="text" class="text-input validate-input" name="subject" id="subject" data-minlength="15">
               <div class="error-message"></div>
             </div>
             <div class="input-control">
               <label for="message">Your message</label>
-              <textarea  rows="7" class="text-input" name="message" id="message" data-minlength="25"></textarea>
+              <textarea  rows="7" class="text-input validate-input" name="message" id="message" data-minlength="25"></textarea>
               <div class="error-message"></div>
             </div>
             <input type="button" value="send" class="main-button" id="contactFormButton">
-            <div class="success-message" role="alert"></div>
+            <div class="status" role="alert"></div>
           </div>
         </fieldset>
       </form>

@@ -52,7 +52,11 @@ textarea {
   text-transform: capitalize;
 }
 
-fieldset .success-message {
+.success-message {
   color: var(--success);
+}
+
+.error-message {
+  color: var(--error);
 }
 

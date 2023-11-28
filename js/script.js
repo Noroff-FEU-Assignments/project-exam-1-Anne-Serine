@@ -254,20 +254,25 @@ function validateEmail(email) {
 const emailInput = document.querySelector("#email")
 
   if(emailInput) {
-    emailInput.addEventListener("input", (event) => {
-      const value = event.target.value;
-      const validate = validateEmail(value);
+    emailInput.addEventListener("change", (event) => {
       const error = emailInput.parentElement.querySelector(".error-message");
-  
-      if(!validate) {
+      const value = event.target.value;
+      
+      if(value === "") {
         emailInput.parentElement.classList.add("error");
-        error.innerHTML = `* example@email.com`;
+        error.innerHTML = "This field is mandatory";
       } else {
-        error.innerHTML = "";
-        emailInput.parentElement.classList.remove("error");
-        emailInput.parentElement.classList.add("success");
+        const validate = validateEmail(value);
+    
+        if(!validate) {
+          emailInput.parentElement.classList.add("error");
+          error.innerHTML = `* example@email.com`;
+        } else {
+          error.innerHTML = "";
+          emailInput.parentElement.classList.remove("error");
+          emailInput.parentElement.classList.add("success");
+        }
       }
-      console.log(validate)
     })
   }
   
@@ -278,10 +283,26 @@ const contactFormButton = document.querySelector("#contactFormButton");
   if(contactFormButton) {
     contactFormButton.addEventListener("click", () => {
 
-      const success = contactFormButton.parentElement.querySelector(".success-message");
+      const inputFields = document.querySelectorAll(".validate-input");
+      let valid = true;
 
-      contactFormButton.parentElement.classList.add("success");
-      success.innerHTML = `Wohoo! Message has been sent. Now take a sip of coffee, and you will hear from me!`
+      inputFields.forEach(input => {
+        if(input.parentElement.classList.contains("error") || !input.value) {
+          valid = false;
+        }
+      })
+      const success = contactFormButton.parentElement.querySelector(".status");
+
+      success.classList.remove("success-message", "error-message");
+
+      if(valid) {
+        success.classList.add("success-message");
+        success.innerHTML = `Wohoo! Message has been sent. Now take a sip of coffee, and you will hear from me!`
+      } else {
+        success.classList.add("error-message");
+        success.innerHTML = `Some of the input fields are not valid.`
+      }
+      
       
     })
   }
@@ -501,22 +522,22 @@ let coffeeFacts = [
 
 const coffeeFactContainer = document.querySelector(".coffee-fact-container");
 
+
 function outputRandomCoffeeFact() {
   const coffeeFactButton = document.getElementById("coffeeFactButton");
 
-  coffeeFactContainer.innerHTML = `<img src="/icons/code-n-coffee-logo.svg" class="logo ma">`;
-
   coffeeFactButton.addEventListener("click", (fact) => {
-
-    coffeeFactContainer.innerHTML = ""
-
-    for(let i = 0; i < coffeeFacts.length; i++) {
-      coffeeFactContainer.innerHTML = `<p>${coffeeFacts[(Math.floor(Math.random() * coffeeFacts.length))]}</p>`;
-    }
-    
-
-    console.log(coffeeFacts[(Math.floor(Math.random() * coffeeFacts.length))])
+    generateCoffeeFact(coffeeFacts);
   })
 }
 
-outputRandomCoffeeFact();
+if(coffeeFactContainer) {
+  outputRandomCoffeeFact();
+  generateCoffeeFact(coffeeFacts);
+}
+
+
+
+function generateCoffeeFact(coffeeFacts) {
+  coffeeFactContainer.innerHTML = `<p>${coffeeFacts[(Math.floor(Math.random() * coffeeFacts.length))]}</p>`;
+}
