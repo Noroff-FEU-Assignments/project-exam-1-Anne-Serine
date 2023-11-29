@@ -211,7 +211,7 @@ nav a:hover::after {
 }
 
 .home-contact-container {
-  max-width: 400px;
+  max-width: 382px;
   width: 100%;
   flex-direction: column;
   padding: 2rem;
