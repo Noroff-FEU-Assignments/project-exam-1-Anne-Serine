@@ -23,6 +23,10 @@ footer .content-container {
   margin-top: 2rem;
 }
 
+.footer-icon-container i {
+  font-size: 2rem;
+}
+
 .footer-icon-container {
   width: 100%;
   display: flex;
