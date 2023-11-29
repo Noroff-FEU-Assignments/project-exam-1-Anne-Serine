@@ -33,7 +33,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+.hello-box p {
   font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
   color: var(--white);
 }

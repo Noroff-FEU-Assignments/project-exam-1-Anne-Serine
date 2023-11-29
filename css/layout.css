@@ -87,10 +87,11 @@ nav a:hover::after {
   position: relative;
 }
 
-.hello-box h1 {
+.hello-box p {
   background-color: var(--background-color);
   color: var(--white);
   text-align: center;
+  font-weight: 700;
   font-size: clamp(4rem, calc(3.8rem + 9vw), 12rem);
   position: absolute;
 }
@@ -108,13 +109,13 @@ nav a:hover::after {
   font-size: clamp(1.4rem, calc(1.3rem + 1vw), 3rem);
 }
 
-.hello-box:hover h1:nth-child(2) {
+.hello-box:hover p:nth-child(2) {
   clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
   transform: translateY(-50px);
   transition: 0.3s;
 }
 
-.hello-box:hover h1:nth-child(3) {
+.hello-box:hover p:nth-child(3) {
   clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
   transform: translateY(50px);
   transition: 0.3s;
