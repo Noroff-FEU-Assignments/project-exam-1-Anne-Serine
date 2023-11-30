@@ -92,3 +92,18 @@ img {
 section {
   position: relative;
 }
+
+ol {
+  padding: 2rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  margin: 1rem;
+}
+
+strong {
+  color: var(--pink);
+}
