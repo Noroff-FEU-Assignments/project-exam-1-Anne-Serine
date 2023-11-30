@@ -98,7 +98,6 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
   padding: 1rem;
   gap: 1rem;
   transition: all 0.2s ease-in-out;
