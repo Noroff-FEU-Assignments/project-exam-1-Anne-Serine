@@ -102,6 +102,7 @@
   padding: 1rem;
   gap: 1rem;
   transition: all 0.2s ease-in-out;
+  flex: 0 1 20rem;
 }
 
 .post-card > div {
@@ -223,6 +224,8 @@
   color: var(--white);
   cursor: pointer;
 }
+
+
 
 
 

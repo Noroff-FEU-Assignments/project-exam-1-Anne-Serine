@@ -295,6 +295,12 @@ nav a:hover::after {
   color: #f6bd60;
 }
 
+.projects-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: auto;
+}
 
 
 
