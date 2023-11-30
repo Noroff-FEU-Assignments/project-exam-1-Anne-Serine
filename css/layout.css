@@ -62,10 +62,15 @@ nav a:hover::after {
   transform: translateY(-50%);
 }
 
-.break {
+.break,
+.break-thin {
   background-color: var(--pink);
   width: 100%;
   height: 2rem;
+}
+
+.break-thin {
+  height: 0.1rem;
 }
 
 .hello-container {
@@ -224,7 +229,7 @@ nav a:hover::after {
 .about-text {
   max-width: 800px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   gap: 1rem;
   flex-direction: column;
   line-height: 1.5;
@@ -234,6 +239,7 @@ nav a:hover::after {
 .about-img {
   max-width: 29rem;
   width: 100%;
+  cursor: none;
 }
 
 .about-text-box {
@@ -242,6 +248,18 @@ nav a:hover::after {
   border-radius: 30px;
   padding: 1rem;
   color: var(--black);
+}
+
+.about-card-container {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.about-cards {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 2rem;
+  box-shadow: inset 0 0px 20px var(--black);
 }
 
 .sub-header-container {
@@ -289,6 +307,7 @@ nav a:hover::after {
     top: 44%;
     transform: translateY(-50%);
   }
+
 }
 
 
@@ -297,6 +316,11 @@ nav a:hover::after {
   .home-contact-container {
     right: 15%;
   }
+
+  .about-card-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
 }
 
 
@@ -324,7 +348,6 @@ nav a:hover::after {
   .home-contact-container {
     right: 20%;
   }
-
 
 
 }

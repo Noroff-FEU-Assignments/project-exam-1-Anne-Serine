@@ -81,6 +81,10 @@
   margin-top: 3rem;
 }
 
+.p-l-r {
+  padding: 0 5rem;
+}
+
 .pt {
   padding-top: 5rem;
 }
@@ -117,4 +121,5 @@
   border: 1px solid var(--white);
   padding: 0 2rem 2rem;
 }
+
 

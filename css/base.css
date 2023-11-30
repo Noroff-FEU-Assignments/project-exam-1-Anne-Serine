@@ -73,6 +73,10 @@ pre {
   color: var(--white);
 }
 
+pre.about-text {
+  background-color: unset;
+}
+
 nav a:hover,
 .hamburger-icon:hover {
   color: var(--pink);
