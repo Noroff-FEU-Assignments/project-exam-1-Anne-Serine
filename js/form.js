@@ -74,6 +74,7 @@ const emailInput = document.querySelector("#email")
   }
   
 
+// Success and error messages for the CONTACT FORM BUTTON
 
 const contactFormButton = document.querySelector("#contactFormButton");
 
@@ -99,7 +100,6 @@ const contactFormButton = document.querySelector("#contactFormButton");
         success.classList.add("error-message");
         success.innerHTML = `Some of the input fields are not valid.`
       }
-      
       
     })
   }

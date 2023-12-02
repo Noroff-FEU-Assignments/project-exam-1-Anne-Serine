@@ -46,7 +46,7 @@ export async function createPostCard(getPosts, loadingIndicator) {
 
 
 
-
+// BLOGPOST LIST, make blogpost cards for the blogpost list pages
 
 export async function blogPostList(getPosts, blogPostPage) {
   const blogPostContainer = document.querySelector(".blog-post-container");
@@ -101,6 +101,8 @@ export async function blogPostList(getPosts, blogPostPage) {
 }
 
 
+
+// DETAIL BLOGPOST
 
 export async function createDetailBlogPost(getPosts) {
 

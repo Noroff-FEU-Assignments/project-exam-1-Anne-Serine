@@ -1,3 +1,5 @@
+// Making a loading indicator that shows while loading posts from API
+
 export function loadingIndicator() {
 
   const loading = document.querySelectorAll(".loading-container");
@@ -8,6 +10,8 @@ export function loadingIndicator() {
  }
  
  
+// Show/hide navigation menu when clicking on the hamburger icon
+
 export function showNavMenu() {
   const hamburgerIcon = document.querySelector(".hamburger-icon");
   const headerNav = document.querySelector("#headerNav");

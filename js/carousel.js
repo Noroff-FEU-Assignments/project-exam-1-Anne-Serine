@@ -33,6 +33,7 @@ export function makeCarousel() {
   })
 
   const dragStart = (e) => {
+
     isDragging = true;
     carousel.classList.add("dragging");
 
@@ -41,6 +42,7 @@ export function makeCarousel() {
   }
 
   const dragging = (e) => {
+
     if(!isDragging) return;
     carousel.classList.add("no-event");
     carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
@@ -73,5 +75,4 @@ export function makeCarousel() {
   carousel.addEventListener("scroll", infinitScroll);
 
   }
-
 }

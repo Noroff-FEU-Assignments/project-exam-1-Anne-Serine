@@ -1,4 +1,4 @@
-
+// Fetching the blogpost from the API
 
 export async function getPosts(url, container) {
   
@@ -21,11 +21,9 @@ export async function getPosts(url, container) {
       return null;
     }
 
-  } catch(error){
+  } catch(error) {
     container.innerHTML = `<div role=alert class="api-error">
                                     Sorry, failed to fetch blog posts...
                                   </div>`
   }
-  
-  
 }
