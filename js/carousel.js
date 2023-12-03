@@ -27,7 +27,6 @@ export function makeCarousel() {
 
   arrowBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-      
       carousel.scrollLeft += btn.id === "leftArrowCarousel" ? -firstCardWidth : firstCardWidth;
     })
   })
@@ -36,7 +35,6 @@ export function makeCarousel() {
 
     isDragging = true;
     carousel.classList.add("dragging");
-
     startX = e.pageX;
     startScrollLeft = carousel.scrollLeft;
   }

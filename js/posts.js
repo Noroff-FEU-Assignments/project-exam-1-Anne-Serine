@@ -31,8 +31,6 @@ export async function createPostCard() {
           altText = posts[i]._embedded["wp:featuredmedia"][0].alt_text;
   
         }
-  
-      
         postCardContainer.innerHTML += `<a href="/html/blogPostSpecific.html?id=${posts[i].id}" class="post-card" draggable="false">
                                           <img src="${postImage}" alt="${altText}" draggable="false">
                                           <div>
