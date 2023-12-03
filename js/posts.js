@@ -14,33 +14,42 @@ export async function createPostCard(getPosts, loadingIndicator) {
     const url = "https://www.aservify.no/wp-json/wp/v2/posts?per_page=9&_embed";
     const posts = await getPosts(url, postCardContainer)
 
-    for (let i = 0; i < posts.length; i++) {
+    if(posts) {
+
+      for (let i = 0; i < posts.length; i++) {
       
-      let formattedDate = new Date(Date.parse(posts[i].date))
-      formattedDate = formattedDate.toLocaleDateString()
+        let formattedDate = new Date(Date.parse(posts[i].date))
+        formattedDate = formattedDate.toLocaleDateString()
+  
+        let postImage = "";
+        let altText = "";
+        if (posts[i]._embedded["wp:featuredmedia"]) {
+  
+          postImage = posts[i]._embedded["wp:featuredmedia"][0].source_url;
+          altText = posts[i]._embedded["wp:featuredmedia"][0].alt_text;
+  
+        }
+  
+      
+        postCardContainer.innerHTML += `<a href="/html/blogPostSpecific.html?id=${posts[i].id}" class="post-card" draggable="false">
+                                          <img src="${postImage}" alt="${altText}" draggable="false">
+                                          <div>
+                                            <p>${formattedDate}</p>
+                                            <h2>${posts[i].title.rendered}</h2>
+                                            <p>${posts[i].excerpt.rendered}</p>
+                                          </div>
+                                        </a>`
 
-      let postImage = "";
-      let altText = "";
-      if (posts[i]._embedded["wp:featuredmedia"]) {
-
-        postImage = posts[i]._embedded["wp:featuredmedia"][0].source_url;
-        altText = posts[i]._embedded["wp:featuredmedia"][0].alt_text;
-
+        makeCarousel()
+                              
       }
-
-    
-      postCardContainer.innerHTML += `<a href="/html/blogPostSpecific.html?id=${posts[i].id}" class="post-card" draggable="false">
-                                        <img src="${postImage}" alt="${altText}" draggable="false">
-                                        <div>
-                                          <p>${formattedDate}</p>
-                                          <h2>${posts[i].title.rendered}</h2>
-                                          <p>${posts[i].excerpt.rendered}</p>
-                                        </div>
-                                      </a>`
-                            
+    } else {
+      postCardContainer.innerHTML = `<p role="alert"> Couldn´t find any posts...</p>`
     }
 
-    makeCarousel()
+    
+
+    
 
   }
 }
