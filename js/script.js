@@ -1,5 +1,4 @@
-import { loadingIndicator, showNavMenu, generateCoffeeFact, aboutMeText } from "./functions.js";
-import { getPosts } from "./api.js";
+import { showNavMenu, generateCoffeeFact, aboutMeText } from "./functions.js";
 import { createPostCard, blogPostList, createDetailBlogPost } from "./posts.js";
 import "./form.js";
 
@@ -15,9 +14,9 @@ const coffeeFacts = [
   "Coffee beans: While they do look a lot like beans, coffee “beans” are actually the seed, or pit, of the fruit that grows on coffee trees. Coffee trees grow small, bright red fruit called coffee cherries.",
 ]
 
-createPostCard(getPosts, loadingIndicator);
-blogPostList(getPosts, blogPostPage, loadingIndicator);
-createDetailBlogPost(getPosts, loadingIndicator);
+createPostCard();
+blogPostList(blogPostPage);
+createDetailBlogPost();
 showNavMenu();
 generateCoffeeFact(coffeeFacts);
 aboutMeText();

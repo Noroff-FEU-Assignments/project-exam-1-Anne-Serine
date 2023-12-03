@@ -1,10 +1,12 @@
 import { makeCarousel} from "./carousel.js"
 import { makeImageModal } from "./modal.js";
+import { getPosts } from "./api.js";
+import { loadingIndicator } from "./functions.js";
 
 
 // make post for carousel
 
-export async function createPostCard(getPosts, loadingIndicator) {
+export async function createPostCard() {
   const postCardContainer = document.querySelector(".post-card-container");
 
   if(postCardContainer) {
@@ -58,7 +60,11 @@ export async function createPostCard(getPosts, loadingIndicator) {
 
 // BLOGPOST LIST, make blogpost cards for the blogpost list pages
 
-export async function blogPostList(getPosts, blogPostPage, loadingIndicator) {
+let page = 0;
+
+export async function blogPostList(blogPostPage) {
+  page = blogPostPage
+
   const blogPostContainer = document.querySelector(".blog-post-container");
 
   if(blogPostContainer) {
@@ -72,7 +78,7 @@ export async function blogPostList(getPosts, blogPostPage, loadingIndicator) {
       const loadMoreContainer = document.querySelector(".load-more-container");
       loadMoreContainer.innerHTML = "<div> No more posts to load. Take a coffee break! </div>"
     } else if(posts.length > 0) {
-      
+
       for (let i = 0; i < posts.length; i++) {
         
         let formattedDate = new Date(Date.parse(posts[i].date))
@@ -99,25 +105,28 @@ export async function blogPostList(getPosts, blogPostPage, loadingIndicator) {
                                 
       }
     }
-    const loadMore = document.getElementById("loadMore");
-
-    if(loadMore) {
-
-      loadMore.addEventListener("click", event => {
-
-        blogPostPage = blogPostPage + 1;
-        blogPostList(getPosts, blogPostPage, loadingIndicator);
-
-      })
-    }
+    
   }
+  
+}
+
+const loadMore = document.getElementById("loadMore");
+
+if(loadMore) {
+
+  loadMore.addEventListener("click", event => {
+
+    page = page + 1;
+    blogPostList(page);
+
+  })
 }
 
 
 
 // DETAIL BLOGPOST
 
-export async function createDetailBlogPost(getPosts, loadingIndicator) {
+export async function createDetailBlogPost() {
 
   const detailPostContainer = document.querySelector(".detail-post-container");
 
