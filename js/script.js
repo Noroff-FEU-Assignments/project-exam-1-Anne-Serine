@@ -16,8 +16,8 @@ const coffeeFacts = [
 ]
 
 createPostCard(getPosts, loadingIndicator);
-blogPostList(getPosts, blogPostPage);
-createDetailBlogPost(getPosts);
+blogPostList(getPosts, blogPostPage, loadingIndicator);
+createDetailBlogPost(getPosts, loadingIndicator);
 showNavMenu();
 generateCoffeeFact(coffeeFacts);
 aboutMeText();

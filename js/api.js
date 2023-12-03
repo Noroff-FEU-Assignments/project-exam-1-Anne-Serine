@@ -9,7 +9,7 @@ export async function getPosts(url, container) {
     const posts = await response.json();
 
     if(posts && loader) {
-      loader.classList.add("dn")
+      loader.innerHTML = "";
     }
 
     if(response.status === 200) {
@@ -22,7 +22,7 @@ export async function getPosts(url, container) {
     }
 
   } catch(error) {
-    container.innerHTML = `<div role=alert class="api-error">
+    container.innerHTML = `<div role="alert" class="api-error">
                                     Sorry, failed to fetch blog posts...
                                   </div>`
   }

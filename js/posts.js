@@ -8,6 +8,7 @@ export async function createPostCard(getPosts, loadingIndicator) {
   const postCardContainer = document.querySelector(".post-card-container");
 
   if(postCardContainer) {
+
     loadingIndicator();
     
     const url = "https://www.aservify.no/wp-json/wp/v2/posts?per_page=9&_embed";
@@ -48,10 +49,13 @@ export async function createPostCard(getPosts, loadingIndicator) {
 
 // BLOGPOST LIST, make blogpost cards for the blogpost list pages
 
-export async function blogPostList(getPosts, blogPostPage) {
+export async function blogPostList(getPosts, blogPostPage, loadingIndicator) {
   const blogPostContainer = document.querySelector(".blog-post-container");
 
   if(blogPostContainer) {
+
+    loadingIndicator();
+
     const url = `https://www.aservify.no/wp-json/wp/v2/posts?_embed&page=${blogPostPage}`;
     const posts = await getPosts(url, blogPostContainer)
 
@@ -104,7 +108,7 @@ export async function blogPostList(getPosts, blogPostPage) {
 
 // DETAIL BLOGPOST
 
-export async function createDetailBlogPost(getPosts) {
+export async function createDetailBlogPost(getPosts, loadingIndicator) {
 
   const detailPostContainer = document.querySelector(".detail-post-container");
 
@@ -112,6 +116,8 @@ export async function createDetailBlogPost(getPosts) {
   const id = params.get("id");
 
   if (id) {
+
+    loadingIndicator();
 
     const detailUrl = "https://www.aservify.no/wp-json/wp/v2/posts/" + id + "?_embed";
 
@@ -130,6 +136,8 @@ export async function createDetailBlogPost(getPosts) {
       
       makeImageModal(altText);
       
+    } else {
+      detailPostContainer.innerHTML = `<p role="alert"> Couldn´t find any posts...</p>`
     }
   }
 }
