@@ -106,7 +106,7 @@ export async function blogPostList(getPosts, blogPostPage, loadingIndicator) {
       loadMore.addEventListener("click", event => {
 
         blogPostPage = blogPostPage + 1;
-        blogPostList(getPosts, blogPostPage);
+        blogPostList(getPosts, blogPostPage, loadingIndicator);
 
       })
     }
