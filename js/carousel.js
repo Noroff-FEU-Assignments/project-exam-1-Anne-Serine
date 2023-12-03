@@ -27,7 +27,7 @@ export function makeCarousel() {
 
   arrowBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-      console.log(btn.id)
+      
       carousel.scrollLeft += btn.id === "leftArrowCarousel" ? -firstCardWidth : firstCardWidth;
     })
   })
@@ -76,3 +76,4 @@ export function makeCarousel() {
 
   }
 }
+

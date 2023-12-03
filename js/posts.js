@@ -40,19 +40,13 @@ export async function createPostCard() {
                                             <h2>${posts[i].title.rendered}</h2>
                                             <p>${posts[i].excerpt.rendered}</p>
                                           </div>
-                                        </a>`
-
-        makeCarousel()
-                              
+                                        </a>`                      
       }
+      makeCarousel()
+
     } else {
       postCardContainer.innerHTML = `<p role="alert"> Couldn´t find any posts...</p>`
     }
-
-    
-
-    
-
   }
 }
 
@@ -101,24 +95,18 @@ export async function blogPostList(blogPostPage) {
                                               <h2>${posts[i].title.rendered}</h2>
                                               <p>${posts[i].excerpt.rendered}</p>
                                             </div>
-                                          </a>`
-                                
+                                          </a>`                   
       }
     }
-    
   }
-  
 }
 
 const loadMore = document.getElementById("loadMore");
 
 if(loadMore) {
-
   loadMore.addEventListener("click", event => {
-
     page = page + 1;
     blogPostList(page);
-
   })
 }
 
