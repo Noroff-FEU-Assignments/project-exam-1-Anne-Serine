@@ -6,13 +6,18 @@
 
 
 
----
+The theme for this project was chosen to be a personal website which serves as a creative canvas for displaying my current work and future projects. Featuring engaging blogs on coding and programming, crafted to inspire others, the site is uniquely complemented by a delightful collection of coffee recipes.
+
 
 Live site: https://www.code-n-coffee.com/
 
 ## Description
 
------
+This project aimed to apply skills acquired in the first year of studies by creating a blog site. Key pages, including Home, About, Blog List, Blog-Specific, and Contact, were designed using HTML, CSS, and JavaScript, interacting with a WordPress Headless CMS. 
+
+The home page features a 'Latest Posts' carousel, while the blog page displays the initial 10 blogs with a 'Load More' functionality. Blog-specific pages dynamically build content using query strings, implement dynamic title changes, and offer image modal functionality. The contact page includes four textboxes with JavaScript validation. 
+
+WordPress serves as a Headless CMS for content storage, with an emphasis on using the WordPress REST API to fetch data and blog posts. The development process involved theme selection, prototype development in Figma, and WordPress setup with 30 blogs added to the admin panel. 
 
 Website architecture:
 
